@@ -1,0 +1,87 @@
+.container{
+	margin: 20px;
+}
+.container input{
+	position: relative;
+	margin-bottom: 20px;
+	width: 87%;
+	outline: none;
+	border: none;
+	padding: 5px;
+	box-sizing: border-box;
+	background: none;
+	border-radius: 25px;
+	text-align: center;
+	text-transform: capitalize;
+	box-shadow: 0px 0px 15px rgba(220,20,60,0.1);
+	caret-color: crimson;
+	color: crimson;
+	z-index: 5;
+}
+
+.container input:hover{
+	box-shadow: 0px 0px 15px rgba(220,255,60,0.1);
+}
+
+.container input::placeholder:hover{
+	color: whitesmoke;
+}
+
+.container input:hover{
+	color: whitesmoke;
+}
+
+.container input::placeholder{
+	color: whitesmoke;
+	text-transform: capitalize;
+	text-align: center;
+	opacity: 70%;
+	font-weight: bold;
+}
+.container textarea{
+	position: relative;
+	width: 88%;
+	height: 60vh;
+	resize: none;
+	caret-color: crimson;
+	outline: none;
+	border: none;
+	border-radius: 25px;
+	background: transparent;
+	color: whitesmoke;
+	opacity: 80%;
+	padding: 20px;
+	padding-bottom: 30px;
+	box-shadow: 1px 1px 15px rgba(255,255,255,0.1);
+	box-sizing: border-box;
+	z-index: 10;
+	animation: color 30s ease .5s infinite;
+}
+.container textarea:hover{
+	box-shadow: 1px 1px 20px rgba(220,255,60,0.1);
+}
+@keyframes color{
+	from{
+		box-shadow: 1px 1px 15px rgba(220,20,60,0.1);
+	} 
+	to{
+		box-shadow: 1px 1px 15px rgba(220,20,10,0.1);
+	}
+}
+
+
+
+.container textarea::-webkit-scrollbar{
+	width: 0.2em;
+}
+
+.container textarea::placeholder{
+	color: crimson;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	opacity: 90%;
+	font-weight: bold;
+	transform: translate(-50%, -50%);
+
+}

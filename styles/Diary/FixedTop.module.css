@@ -1,0 +1,88 @@
+.fixedTop{
+	height: 10vh;
+	width: 95%;
+	border-radius: 25px;
+	margin: 15px;
+	box-sizing: border-box;
+}
+
+.fixedTop .Container{
+	position: relative;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+}
+
+.icon{
+	color: crimson;
+	opacity: 50%;
+	font-size: 24px;
+	padding-left: 3px;
+}
+
+.fixedTop .Container h1 {
+	width: 50%;
+	background: linear-gradient(whitesmoke, crimson, rgba(255,0,0,0.2));
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+	padding-left: 15px;
+	text-transform: uppercase;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-weight: 800;
+	font-size: 40px;
+}
+
+.fixedTop .Container p{
+	color: crimson;
+	font-weight: 800;
+	font-size: 19px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida GFrande', 'Lucida Sans', Arial, sans-serif;
+	text-transform: capitalize;
+	/* padding-left: 70px; */
+	padding-right: 15px;
+}
+
+.fixedTop .Container .AudioPadding{
+	padding-right: 15px;
+}
+
+.Audio{
+	position: relative;
+	width:40px;
+	height: 40px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 10px;
+	overflow:hidden;
+	
+}
+.Audio::before{
+	content: "";
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: linear-gradient(transparent, crimson);
+	animation: rotateCircle 3s linear .5s infinite;
+}
+
+.Audio::after{
+	content: "";
+	position: absolute;
+	inset: 2px;
+	background: black; 
+	border-radius: 50%;
+
+}
+@keyframes rotateCircle{
+	from{
+	transform: rotate(0deg);
+	}
+	to{
+	transform: rotate(360deg)
+	}
+}

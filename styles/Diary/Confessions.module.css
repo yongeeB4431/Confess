@@ -1,0 +1,84 @@
+.container{
+	margin-top: 30px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.container .ConfessionBox{
+	width: 80%;
+	border-radius: 30px;
+	box-shadow: 1px 1px 20px rgba(220,20,60,0.5);
+	height: 190px;
+	margin-bottom: 10px;
+}
+
+.container .ConfessionBox .DateTime{
+	display: flex;
+	justify-content: space-around;
+	padding-top: 5px;
+	color: pink;
+}
+
+.container .ConfessionBox .DateTime h4{
+	color:coral;
+	width: 70%;
+	text-align: center;
+}
+
+.container .ConfessionBox .DateTime p{
+	color: lime;
+	opacity: 50%;
+}
+
+.container .ConfessionBox .TitleFavorite{
+	padding-top: 10px;
+	display: flex;
+	justify-content: space-around;
+}
+.container .ConfessionBox .TitleFavorite h4{
+	width: 70%;
+	text-align: center;
+	color: crimson;
+}
+.container .ConfessionBox .TitleFavorite p{
+	color: orange;
+	font-weight: bold;
+}
+
+.container .ConfessionBox .MusicName{
+	font-style: italic;
+	font-size: 12px;
+	margin-top: 5px;
+	color: orange;
+	font-weight: bold;
+}
+
+.container .ConfessionBox .Confession p{
+	padding-top: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: center;
+	color: rgba(255,255,255,.75)
+}
+
+.container .ConfessionBox .EditedDeleted{
+	margin-top: 10px;
+	display: flex;
+	padding-left: 15px;
+	padding-right: 15px;
+	justify-content: space-between;
+}
+
+.container .ConfessionBox .EditedDeleted span{
+	color: orange;	
+	font-weight: bold;
+}
+
+.container .ConfessionBox .EditedDeleted span span{
+	color: green;	
+	}
+
+.container .ConfessionBox .EditedDeleted p{
+	color: red;
+}

@@ -1,0 +1,15 @@
+
+
+.image::after{
+content: "";
+width: 100%;
+height: 70vh;
+position: absolute;
+top: 25%;
+background-image: url('/images/confession.jpg');
+background-size: cover;
+background-position: center;
+overflow: hidden;
+box-sizing: border-box;
+opacity: 20%;	
+}
