@@ -2,8 +2,6 @@ import styles from "../../../styles/Diary/FixedTop.module.css"
 import Audio from "../Home/Audio";
 import Human from "../../static/audio/Rag'n'Bone Man - Human.mp3"
 import {
-	faTrash,
-	faStar,
 	faMessage
   } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"

@@ -8,13 +8,7 @@ import Confession from '../../../models/confessionsModel'
 export default async function addConfession(req,res){
 	try{
 		
-		console.log("CONNECTING TO MONGO")
-		await connectMongo()
-		console.log("CONNECTED TO MONGO");
-	
-		console.log("CREATING DOCUMENT")
 		const confession = await Confession.create(req.body)
-		console.log("CREATED DOCUMENT")
 
 		res.json({ confession })
 	
