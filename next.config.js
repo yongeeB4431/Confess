@@ -2,6 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  eslint:{
+    ignoreDuringBuilds: true,
+  },
+  typescript:{
+    ignoreBuildErrors: true,
+  },
   env: {
     "MONGO_URI": "mongodb+srv://yongeeB4431:adewunmi2017@cluster0.xn5ulln.mongodb.net/?retryWrites=true&w=majority"
   },

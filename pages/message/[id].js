@@ -1,8 +1,7 @@
-import Confession from "../component/message/Message"
+import Confession from "../../component/message/Message"
 import { server } from "../../config/index"
 function Message(props){
 return <Confession confession={props.data} />
-return <h1>hello world</h1>;
 
 }
 

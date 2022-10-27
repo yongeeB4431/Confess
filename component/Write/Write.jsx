@@ -3,19 +3,16 @@ import Title from "../Home/title";
 import Input from "./Input";
 import BottomNavigator from "../Home/BottomNavigator"
 import Audio from "../Home/Audio";
-import styles from "../../../styles/Home/Title.module.css";
+import styles from "../../styles/Home/Title.module.css";
 import Icon from "../Home/WriteIcon"
-import style from "../../../styles/Input/Write.module.css"
+import style from "../../styles/Input/Write.module.css"
 import Church from "../../static/audio/Hozier - Take Me To Church.mp3"
-import { Request } from "../../../request/request";
-
+import { Request } from "../../request/request";
 import {
-	faCarSide,
 	faPaperPlane
   } from "@fortawesome/free-solid-svg-icons";
-  import { DateAndTime } from "../../../functions/DateAndTime";
+  import { DateAndTime } from "../../functions/DateAndTime";
 
-var inputData = {};
 const initialData = {
 	title: "",
 	yourConfession: "",

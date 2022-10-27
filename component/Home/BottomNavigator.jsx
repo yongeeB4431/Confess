@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router';
-import style from "../../../styles/Home/BottomNavigator.module.css"
+import style from "../../styles/Home/BottomNavigator.module.css"
 import {
 	faHome,
 	faBook,
@@ -9,7 +9,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 function BottomNav(){
 	const router = useRouter()
-	console.log(router.pathname)
 
 return(
 	<main className={style.NavContainer}>

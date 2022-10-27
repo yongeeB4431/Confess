@@ -1,4 +1,4 @@
-import style from "../../../styles/Message/Title.module.css"
+import style from "../../styles/Message/Title.module.css"
 function Title({title}){
 	return (
 		<div className={style.container}>

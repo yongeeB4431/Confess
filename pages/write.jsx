@@ -1,4 +1,4 @@
-import Input from './component/Write/Write'
+import Input from '../component/Write/Write'
 function Write(){
 return (
 <Input />

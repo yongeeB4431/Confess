@@ -1,6 +1,5 @@
-import WriteIcon from "./WriteIcon";
-import styles from "../../../styles/Home/Title.module.css";
-import Audio from "./Audio";
+import styles from "../../styles/Home/Title.module.css";
+
 
 function Title(props){
 	return(

@@ -1,7 +1,7 @@
-import style from "../../../styles/Message/Header.module.css"
+import style from "../../styles/Message/Header.module.css"
 import Audio from "../Home/Audio";
 import AnotherLove from "../../static/audio/Tom Odell - Another Love (Official Video).mp3"
-import styles from "../../../styles/Home/Title.module.css";
+import styles from "../../styles/Home/Title.module.css";
 
 
 function Header({time, day, date}){

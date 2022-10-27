@@ -3,7 +3,7 @@ import {
 	faPenToSquare
   } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import style from "../../../styles/Message/EditFavorite.module.css"
+import style from "../../styles/Message/EditFavorite.module.css"
 
 function EditFavorite({editHistory}){
 	console.log(editHistory)

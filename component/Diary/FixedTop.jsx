@@ -1,6 +1,7 @@
-import styles from "../../../styles/Diary/FixedTop.module.css"
+import styles from "../../styles/Diary/FixedTop.module.css"
 import Audio from "../Home/Audio";
 import Human from "../../static/audio/Rag'n'Bone Man - Human.mp3"
+
 import {
 	faMessage
   } from "@fortawesome/free-solid-svg-icons";

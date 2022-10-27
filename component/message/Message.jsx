@@ -3,7 +3,7 @@ import Confession from "./Confession";
 import Header from "./Header";
 import Title from "./Title";
 import BottomNav from "../Home/BottomNavigator";
-import style from "../../../styles/Message/Message.module.css"
+import style from "../../styles/Message/Message.module.css"
 
 function Message({confession}){
 	const {time, day, date, editHistory, title, yourConfession} = confession;

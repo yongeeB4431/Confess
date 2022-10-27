@@ -1,5 +1,5 @@
 import { Typewriter } from 'react-simple-typewriter';
-import style from "../../../styles/Home/Typing.module.css"
+import style from "../../styles/Home/Typing.module.css"
 let confession = [
 	"As dark as I am",
 	"I will always find enough light",

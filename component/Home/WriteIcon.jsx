@@ -1,9 +1,5 @@
 import Link from "next/link";
-import style from "../../../styles/Home/WriteIcon.module.css"
-import {
-	faPencil,
-	faPaperPlane
-  } from "@fortawesome/free-solid-svg-icons";
+import style from "../../styles/Home/WriteIcon.module.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 

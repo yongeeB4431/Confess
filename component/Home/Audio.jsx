@@ -5,7 +5,8 @@ import {
   } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import ReactHowler from "react-howler"
-import style from "../../../styles/Home/Audio.module.css"
+import style from "../../styles/Home/Audio.module.css"
+
 
 function Audio(props){
 	let [play, setPlay] = useState(false)

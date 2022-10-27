@@ -1,8 +1,7 @@
-import Diary from "./component/Diary/Diary";
+import Diary from "../component/Diary/Diary";
 import {server} from "../config/index"
-import DataNotFound from "./component/DataNotFound/DataNotFound";
+import DataNotFound from "../component/DataNotFound/DataNotFound";
 function diary({confessions}){
-	console.log(confessions.confession)
 return(
 	<>
 	{confessions.confession.length == 0 ? <DataNotFound /> : <Diary data={confessions} />}

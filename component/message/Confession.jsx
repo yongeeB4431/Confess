@@ -1,4 +1,4 @@
-import style from "../../../styles/Message/Confession.module.css"
+import style from "../../styles/Message/Confession.module.css"
 
 function Confession({confession}){
 	return(

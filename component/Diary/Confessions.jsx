@@ -4,7 +4,7 @@ import {
 	faStar
   } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import styles from "../../../styles/Diary/Confessions.module.css"
+import styles from "../../styles/Diary/Confessions.module.css"
 function cutWords(words, num){
 	return words.length <= num ? words : words.substring(words, num) + "...";
 }
