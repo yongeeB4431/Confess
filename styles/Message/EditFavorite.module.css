@@ -1,0 +1,26 @@
+.container{
+	display: flex;
+	justify-content: space-around;
+	margin: 10px 0; 
+}
+
+.container .edit{
+	font-size: 26px;
+	color: brown;
+}
+
+.container .edited{
+	color: brown;
+	opacity:  50%;
+	width: 70%;
+}
+
+.container .number{
+	color: whitesmoke;
+}
+
+.container .history{
+	font-size: 26px;
+	color: brown;
+	opacity: 50%;
+}

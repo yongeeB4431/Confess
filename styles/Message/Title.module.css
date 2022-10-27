@@ -1,0 +1,19 @@
+.container{
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+.container h1{
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	color: thistle;
+	opacity: 80%;
+	transition: all 2s ease-in .5s;
+}
+
+.container h1:hover{
+	color: crimson;
+	transform: scale(1.2);
+}

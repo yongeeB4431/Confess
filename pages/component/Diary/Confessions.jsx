@@ -1,39 +1,59 @@
+import Link from "next/link";
 import {
 	faTrash,
 	faStar
   } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styles from "../../../styles/Diary/Confessions.module.css"
-function cutWords(words){
-	return words.substring(0, 180) + "...";
+function cutWords(words, num){
+	return words.length <= num ? words : words.substring(words, num) + "...";
 }
-function Confessions(){
+function Confessions({confessions}){
+	let {confession} = confessions;
+	
+	
 	return(
 		<main className={styles.container}>
-		<div className={styles.ConfessionBox}>
-		<div className={styles.DateTime}>
-				<h4>Tuesday, 24th September 2022</h4>
-				<p>23:59</p>
+			<div className={styles.mapContainer}>
+			{confession.map((confess)=>{
+				return(
+					
+					<div key={confess._id} className={styles.ConfessionBox}>
+					<Link key={confess._id} href={{
+						pathname: `/message/${confess._id}`,
+						query: {
+							confess: confess,
+							editHistory: JSON.stringify(confess.editHistory)
+						}
+					}}>
+					<a style={{textDecoration:"none"}}>
+					<div className={styles.DateTime}>
+							<h4>{confess.day}, {confess.date}</h4>
+							<p>{confess.time}</p>
+						</div>
+						<div className={styles.TitleFavorite}>
+							<h4>{confess.title}</h4>
+							{confess.starred ? <FontAwesomeIcon icon={faStar} color="gold" /> : <></>}
+							
+						</div>
+						<div className={styles.Confession}>
+							<p>{cutWords(confess.yourConfession,  250)}
+							</p>
+						</div>
+						<div className={styles.EditedDeleted}>
+							<span>Edited: <span>{confess.editHistory.length}</span></span>
+							<FontAwesomeIcon icon={faTrash} color="red"/>
+						</div>
+						</a>
+						</Link>
+						</div>
+						
+				)
+			})}
 			</div>
-			<div className={styles.TitleFavorite}>
-				<h4>My most favorable moment with you</h4>
-				<FontAwesomeIcon icon={faStar} color="gold" />
-			</div>
-			<div className={styles.Confession}>
-				<p>{cutWords("Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus velit ducimus maxime dolores aperiam architecto quae omnis facilis reiciendis veniam error itaque voluptatibus, explicabo doloribus ipsum veritatis. Earum, molestias eos?")}
-				</p>
-			</div>
-			<div className={styles.EditedDeleted}>
-				<span>Edited: <span>none</span></span>
-				<FontAwesomeIcon icon={faTrash} color="red"/>
-			</div>
-			<div className={styles.MusicName}>
-				<marquee>Song: Hozier - Take Me To Church</marquee>
-			</div>
-
-		</div>
 		</main>
 	)
 }
+
 
 export default Confessions;

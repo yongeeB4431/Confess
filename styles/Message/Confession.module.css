@@ -1,0 +1,12 @@
+.container{
+	width: 90%;
+	margin: 10px auto;
+}
+
+.container p{
+	color: whitesmoke;
+	font-family: Verdana, Geneva, Tahoma, sans-serif
+	;
+	font-size: 20px;
+	text-align: center;
+}

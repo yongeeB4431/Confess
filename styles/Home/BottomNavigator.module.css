@@ -1,45 +1,46 @@
-.container{
-	margin: 0px;
-	position: absolute;
-	top: 25%;
-	right: 5%;
-	box-sizing: border-box;
-	z-index: 9;
+.NavContainer{
+	position: fixed;
+	bottom: 1%;
+	width: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
-.Navbar nav ul{
-	height: 70vh;
-	display: flex;
-	flex-direction: column; 
-	justify-content: space-between;
-	
-}
-
-.Navbar nav ul .icon{
-	font-size: 24px;
-	color: crimson;
-}
-
-
-.Navbar nav ul .icon:hover {
-	color: whitesmoke;
-}
-
-.Navbar nav ul .icon:active{
-	color: whitesmoke;
-}
-
-.texts{
-	color: crimson;
+.Nav{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	margin-top: 5px;
-	padding-left: 5px;
-	cursor:default;
-	
 }
 
-.texts p:hover{
-	color: whitesmoke;
+.Nav a{
+	text-decoration: none;
+	display: flex;
+	flex-direction: column;
+}
+
+.Nav a h4{
+	color: darkkhaki;
+	opacity: 50%;
+	padding-top: 5px;
+}
+
+.Icon{
+	font-size: 24px;
+	color: rgba(220,20,60,0.75);
+	;
+}
+
+.Icon:hover{
+	color: burlywood;
+}
+
+.active{
+	color: white;
+	opacity: 10%;
+}
+
+
+.Nav a .Active{
+	color: burlywood;
+	opacity: 10%;
 }

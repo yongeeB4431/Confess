@@ -12,15 +12,16 @@ import holdon from '../pages/static/audio/hold_on.mp3'
 
 function Homes(){
   return (
-   
     <div>
       <Title leftSide={<Write iconName={faPencil} link="/write" />}>
       <Audio styling={styles.Audio} source={holdon}/>
       </Title>
      <Image />
-     <BottomNavigator />
+     <BottomNavigator  />
      </div>
   )
 }
+
+
 
 export default Homes;

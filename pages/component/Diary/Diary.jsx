@@ -1,20 +1,22 @@
-import {useRouter} from 'next/router'
+import BottomNav from '../Home/BottomNavigator';
 import Confessions from "./Confessions";
 import FixedTop from "./FixedTop";
 
 
-function Diary(){
-	const router = useRouter()
-	const data = router.query;
-	console.log(data);
+
+function Diary({data}){
 return(
 	<>
 	<FixedTop />
-	<Confessions />
-	<Confessions />
-	<Confessions />
+	<div style={{height: "73vh",overflowY: "scroll"}}>
+	<Confessions confessions={data} />
+	</div>
+	<BottomNav />
 	</>
 )
 }
+
+
+
 
 export default Diary;

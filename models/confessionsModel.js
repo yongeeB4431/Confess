@@ -17,10 +17,20 @@ const ConfessionSchema = new Schema({
 		type: String,
 		required: true
 	},
-	starred: Boolean,
-	timesEdited: Number,
-	editHistory: Array,
-	musicLink: String,
+	day: {
+		type: String,
+		required: true
+	},
+	starred: {
+		type: Boolean
+	},
+	editHistory: [
+		{
+			yourConfession: String,
+			date: String,
+			day: String
+		}
+	]
 })
 
 const Confession = models.Confession || model("Confession", ConfessionSchema)

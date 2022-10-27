@@ -1,0 +1,25 @@
+.container{
+	display: flex;
+	justify-content: space-around;
+}
+
+.container h2{
+	font-size: 5vw;
+	color: crimson;
+	align-self: center;
+	color: transparent;
+	background: linear-gradient(white, crimson);
+	background-clip: text;
+}
+
+.container h2 .time{
+	font-size: 3vw;
+	opacity: 50%;
+	font-style: italic;
+	color: crimson;
+}
+
+.container h2 .day{
+	color: whitesmoke;
+	
+}
