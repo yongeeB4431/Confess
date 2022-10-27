@@ -19,13 +19,8 @@ function Confessions({confessions}){
 				return(
 					
 					<div key={confess._id} className={styles.ConfessionBox}>
-					<Link key={confess._id} href={{
-						pathname: `/message/${confess._id}`,
-						query: {
-							confess: confess,
-							editHistory: JSON.stringify(confess.editHistory)
-						}
-					}}>
+					<Link key={confess._id} href={`/message/${confess._id}`
+					}>
 					<a style={{textDecoration:"none"}}>
 					<div className={styles.DateTime}>
 							<h4>{confess.day}, {confess.date}</h4>

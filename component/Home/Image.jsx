@@ -3,9 +3,10 @@ import Confess from "./Confession";
 
 function Img(){
 	return(
-		
+		<div style={{height: "65vh", overflowY: "scroll"}}>
 		 <div className={style.image}>
 		  <Confess /> 
+		</div>
 		</div>
 		
 	)
