@@ -16,13 +16,13 @@ function DataNotFound(){
 		<div style={{width: "100%", display: "flex", justifyContent: "space-around", alignItems:"space-around"}}>
 		<Link href="/">
 		<a style={{textDecoration: "none"}}>
-		<FontAwesomeIcon icon={faHome} color="crimson" style={{fontSize: "30px"}}/>
+		<FontAwesomeIcon icon={faHome} color="crimson" style={{fontSize: "31px"}}/>
 		<h3 style={{textAlign: "center", color:"gray"}}>home</h3>
 		</a>
 		</Link>
 		<Link href="/write">
 		<a style={{textDecoration: "none"}}>
-		<FontAwesomeIcon icon={faPen} color="crimson" style={{fontSize: "30px"}}/>
+		<FontAwesomeIcon icon={faPen} color="crimson" style={{fontSize: "31px"}}/>
 		<h3 style={{textAlign: "center", color:"gray"}}>write</h3>
 		</a>
 		</Link>
