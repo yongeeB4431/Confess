@@ -1,59 +1,60 @@
-.box{
-	width: 100%;
-	margin-top: 20px;
+.box {
+  width: 100%;
+  margin-top: 20px;
 }
-.id{
-	background: white;
+.id {
+  background: white;
 }
-.confessionBox{
-	width: 90%;
-	border-radius: 20px;
-	box-shadow: 1px 1px 10px crimson;
-	margin: 20px auto;
-	padding: 10px 0;
-}
-
-.titleFavorite{
-	display: flex;
-	justify-content: space-between;
-	padding: 0 10px;
+.confessionBox {
+  width: 90%;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px crimson;
+  margin: 20px auto;
+  padding: 10px 0;
 }
 
-.titleFavorite .title{
-	color: brown;
-	width: 80%;
-	text-align: center;
+.titleFavorite {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
 }
 
-.titleFavorite .star{
-	padding-top: 3px;
+.titleFavorite .title {
+  color: brown;
+  width: 95%;
+  text-align: center;
+  font-size: 20px;
 }
 
-.confession{
-	color: whitesmoke;
-	opacity: 90%;
-	white-space: pre-line;
-	line-height: 1.6;
-	padding: 10px 10px;
-	font-family: 'Fira Code';
-	word-spacing: -3 px;
-	color:coral;
+.titleFavorite .star {
+  padding-top: 3px;
 }
 
-.dateEditedDelete{
-	display: flex;
-	justify-content: space-between;
-	padding:  0 10px;
+.confession {
+  color: whitesmoke;
+  opacity: 90%;
+  white-space: pre-line;
+  line-height: 1.6;
+  padding: 10px 10px;
+  font-family: "Fira Code";
+  word-spacing: -3 px;
+  color: coral;
 }
 
-.dateEditedDelete .date{
-	color: antiquewhite;
+.dateEditedDelete {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
 }
 
-.dateEditedDelete .edited{
-	color: orange;
+.dateEditedDelete .date {
+  color: antiquewhite;
 }
 
-.dateEditedDelete .edited span{
-	color: gray;
+.dateEditedDelete .edited {
+  color: orange;
+}
+
+.dateEditedDelete .edited span {
+  color: gray;
 }
