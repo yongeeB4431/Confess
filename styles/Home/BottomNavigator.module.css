@@ -1,44 +1,44 @@
-.NavContainer{
-	position: fixed;
-	bottom: 1%;
-	width: 100%;
+.NavContainer {
+  position: fixed;
+  bottom: 0px;
+  z-index: 5;
+  width: 100%;
+  background: black;
 }
 
-.Nav{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+.Nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.Nav a{
-	text-decoration: none;
-	display: flex;
-	flex-direction: column;
+.Nav a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
 }
 
-.Nav a h4{
-	color: darkkhaki;
-	opacity: 50%;
-	padding-top: 5px;
+.Nav a h4 {
+  color: gray;
+  opacity: 50%;
+  padding-top: 5px;
 }
 
-.Icon{
-	font-size: 24px;
-	color: rgba(220,20,60,0.75);
-	;
+.Icon {
+  font-size: 24px;
+  color: rgba(220, 20, 60, 0.75);
 }
 
-.Icon:hover{
-	color: burlywood;
+.Icon:hover {
+  color: burlywood;
 }
 
-.active{
-	color: white;
-	opacity: 10%;
+.active {
+  color: white;
+  opacity: 10%;
 }
 
-
-.Nav a .Active{
-	color: burlywood;
-	opacity: 10%;
+.Nav a .Active {
+  color: burlywood;
+  opacity: 10%;
 }

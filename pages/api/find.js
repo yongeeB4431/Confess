@@ -9,7 +9,6 @@ export default async function find(req,res){
 	try{
 		await connectMongo()
 		const confession = await Confession.find()
-		console.log("CREATED DOCUMENT")
 
 		res.json({ confession })
 	

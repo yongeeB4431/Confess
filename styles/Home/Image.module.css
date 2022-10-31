@@ -1,15 +1,46 @@
+.image::after {
+  content: "";
+  width: 100%;
+  height: 70vh;
+  position: absolute;
+  top: 25%;
+  background-image: url("/images/confession.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  opacity: 20%;
+}
 
+.scrollBar {
+  height: 70vh;
+  overflow-y: scroll;
+}
 
-.image::after{
-content: "";
-width: 100%;
-height: 70vh;
-position: absolute;
-top: 25%;
-background-image: url('/images/confession.jpg');
-background-size: cover;
-background-position: center;
-overflow: hidden;
-box-sizing: border-box;
-opacity: 20%;	
+.scrollBar::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 12px;
+}
+
+.scrollBar::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.scrollBar::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    transparent,
+    crimson,
+    transparent,
+    transparent,
+    transparent
+  );
+  border-radius: 6px;
+}
+
+.scrollBar::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.scrollBar::-webkit-scrollbar-track-piece {
+  background-color: transparent;
 }

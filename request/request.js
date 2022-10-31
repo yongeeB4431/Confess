@@ -1,20 +1,18 @@
 export class Request{
-	constructor(url, data){
+	constructor(url){
 		this.url = url
-		this.data = data
 	}
 
-	async createNewCofession(day, date, time){
+	async createNewCofession(day, date, time, title, yourConfession){
 		try{
 			const res = await fetch(this.url, {
 				method: "POST",
-				body: JSON.stringify({...this.data, day, date , time}),
+				body: JSON.stringify({...this.data, day, date , time, editHistory: [], starred: false, title, yourConfession}),
 				headers: {
 					'Content-Type': 'application/json'
 				}
 			})
 			const data = await res.json();
-			console.log(data);
 		} catch(error){
 			console.error(error.message);
 		}	

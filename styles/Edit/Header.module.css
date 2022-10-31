@@ -1,0 +1,35 @@
+.container{
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 10px;
+	align-items: center;
+}
+
+.container .title{
+	color: crimson;
+	width: 65%;
+	text-align: center;
+	font-size: 30px;
+}
+
+.container .title:hover{
+	color: whitesmoke;
+}
+
+.container .editLength{
+	width: 40px;
+	height: 40px;
+	border-radius: 25px;
+	border: 2px solid crimson;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.arrow{
+	font-size: 18px;
+}
+
+.arrow:hover{
+	color: red;
+}

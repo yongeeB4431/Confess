@@ -1,93 +1,59 @@
-
-.container{
-	margin-top: 30px;
-	position: relative;
-	display: flex;
-	justify-content: center;
-}
-.mapContainer{
+.box{
 	width: 100%;
+	margin-top: 20px;
+}
+.id{
+	background: white;
+}
+.confessionBox{
+	width: 90%;
+	border-radius: 20px;
+	box-shadow: 1px 1px 10px crimson;
+	margin: 20px auto;
+	padding: 10px 0;
+}
+
+.titleFavorite{
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	
-}
-
-.container .ConfessionBox{
-	width: 80%;
-	box-sizing: border-box;
-	border-radius: 30px;
-	box-shadow: 1px 1px 10px rgba(220,20,60,0.5);
-	margin-bottom: 20px;
-}
-
-.container .ConfessionBox .DateTime{
-	display: flex;
-	justify-content: space-around;
-	padding-top: 20px;
-	color: pink;
-}
-
-.container .ConfessionBox .DateTime h4{
-	color:coral;
-	width: 70%;
-	text-align: center;
-}
-
-.container .ConfessionBox .DateTime p{
-	color: lime;
-	opacity: 50%;
-}
-
-.container .ConfessionBox .TitleFavorite{
-	padding-top: 10px;
-	display: flex;
-	justify-content: space-around;
-}
-.container .ConfessionBox .TitleFavorite h4{
-	width: 70%;
-	text-align: center;
-	color: crimson;
-}
-.container .ConfessionBox .TitleFavorite p{
-	color: orange;
-	font-weight: bold;
-}
-
-.container .ConfessionBox .MusicName{
-	font-style: italic;
-	font-size: 12px;
-	margin-top: 5px;
-	color: orange;
-	font-weight: bold;
-}
-
-.container .ConfessionBox .Confession p{
-	padding-top: 10px;
-	padding-left: 5px;
-	padding-right: 5px;
-	text-align: center;
-	color: rgba(255,255,255,.75)
-}
-
-.container .ConfessionBox .EditedDeleted{
-	margin-top: 10px;
-	display: flex;
-	padding-left: 15px;
-	padding-right: 15px;
 	justify-content: space-between;
-	padding-bottom: 10px;
+	padding: 0 10px;
 }
 
-.container .ConfessionBox .EditedDeleted span{
-	color: orange;	
-	font-weight: bold;
+.titleFavorite .title{
+	color: brown;
+	width: 80%;
+	text-align: center;
 }
 
-.container .ConfessionBox .EditedDeleted span span{
-	color: green;	
-	}
+.titleFavorite .star{
+	padding-top: 3px;
+}
 
-.container .ConfessionBox .EditedDeleted p{
-	color: red;
+.confession{
+	color: whitesmoke;
+	opacity: 90%;
+	white-space: pre-line;
+	line-height: 1.6;
+	padding: 10px 10px;
+	font-family: 'Fira Code';
+	word-spacing: -3 px;
+	color:coral;
+}
+
+.dateEditedDelete{
+	display: flex;
+	justify-content: space-between;
+	padding:  0 10px;
+}
+
+.dateEditedDelete .date{
+	color: antiquewhite;
+}
+
+.dateEditedDelete .edited{
+	color: orange;
+}
+
+.dateEditedDelete .edited span{
+	color: gray;
 }

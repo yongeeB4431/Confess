@@ -1,0 +1,47 @@
+.container{
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 80%;
+	border-radius: 20px;
+	background: #000000;
+	box-shadow: 1px 1px 5px rgba(255,255,255,0.5);
+}
+
+.container h3{
+	color: red;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	text-align: center;
+	padding: 20px 0;
+}
+
+
+.iconContainer{
+	padding-bottom: 20px;
+}
+.icon{
+	display: flex;
+	justify-content: space-around;
+	font-size: 35px;
+	
+
+}
+
+
+.delete{
+color: green;
+}
+
+.delete:hover{
+	color: lime;
+}
+
+.cancel{
+	color: red;
+}
+
+.cancel:hover{
+	opacity: 50%;
+}

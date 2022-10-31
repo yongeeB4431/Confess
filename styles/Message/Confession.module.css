@@ -4,9 +4,12 @@
 }
 
 .container p{
-	color: whitesmoke;
 	font-family: Verdana, Geneva, Tahoma, sans-serif
 	;
-	font-size: 20px;
-	text-align: center;
+	white-space:pre-line;
+	color:honeydew;
+	opacity: 80%;
+	line-height: 1.6;
+	text-align: left;
+	font-family: 'Fira Code';
 }

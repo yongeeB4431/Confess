@@ -1,3 +1,4 @@
+import Head from "next/head"
 import {useState} from "react";
 import Title from "../Home/title";
 import Input from "./Input";
@@ -6,61 +7,49 @@ import Audio from "../Home/Audio";
 import styles from "../../styles/Home/Title.module.css";
 import Icon from "../Home/WriteIcon"
 import style from "../../styles/Input/Write.module.css"
-import Church from "../../static/audio/Hozier - Take Me To Church.mp3"
 import { Request } from "../../request/request";
 import {
 	faPaperPlane
   } from "@fortawesome/free-solid-svg-icons";
   import { DateAndTime } from "../../functions/DateAndTime";
 
-const initialData = {
-	title: "",
-	yourConfession: "",
-	starred: false,
-	editHistory: [],
-}
-function Write(){
-	const [data, setData] = useState(initialData);
+function Write({editConfession}){
+	const t = editConfession.title !== undefined ? editConfession.title : "";
+	const c = editConfession.yourConfession !== undefined ? editConfession.yourConfession : "";
+	const [title, setTitle] = useState(t)
+	const [yourConfession, setYourConfession] = useState(c);
+	const [activeNavBar, setActiveNavBar] = useState(true)
 	const d = new DateAndTime();	
-	
 	function sendData(){
 		const {day, Date, time} = d.handleData()
-		setData({...data, time, date:Date, day})
-		new Request('/api/confession/create', data).createNewCofession(day, Date, time);
-		console.log("hello datass")
-		console.log(day)
-		
+
+		new Request('/api/confession/create').createNewCofession(day, Date, time, title, yourConfession);		
 	}
 
-	// async function editData(){
-	// 	const d = new DateAndTime()
-	// 	const {day, Date, time} = d.handleData()
-	// 	const res = await fetch('/api/confession/edit', {
-	// 		method: "POST",
-	// 		body: JSON.stringify({
-	// 			yourConfession: "hello world",
-	// 			date:"30th september 2024",
-	// 			day: "wednesday",
-	// 		}),
-	// 		headers:{
-	// 			'Content-Type': 'application/json'
-	// 		}
-	// 	})
-	// 	const DATA = await res.json();
-	// 	console.log(DATA);
-	// }
-
 	// confirm title and confession length before sending into database
-	let TCL = data.title.length >= 7 && data.yourConfession.length >= 10
-
-	
+	let TCL = title.length >= 7 && yourConfession.length >= 10
+	let linkPath = TCL ? "/diary" : "/write"
+	async function sendEditData(){
+		const {day, Date, time} = d.handleData()
+		await fetch(`/api/confession/edit/${editConfession._id}`, {
+			method: "POST",
+			body: JSON.stringify({yourConfession, day, time, date: Date, updateConfession: editConfession.yourConfession}),
+			headers:{
+				'Content-Type': 'application/json'
+			},
+		})
+	}
+const src = "https://dl.dropbox.com/s/8377unyfvmh3zs1/Beautiful%20Sad%20Piano%20Instrumental%20Song%20-%20Everywhere.mp3?dl=0"	
 return(
 	<main className={style.container}>
-	<Title leftSide={<Audio styling={styles.Audio} source={Church} />}>
-	<Icon iconName={faPaperPlane} link={TCL ? "/diary" : "/write"} sendData={TCL && sendData} />
+	<Head>
+		<title>write</title>
+	</Head>
+	<Title leftSide={<Audio styling={styles.Audio} source={src} />}>
+	<Icon iconName={faPaperPlane} link={linkPath} sendData={Object.keys(editConfession).length=== 0 ? TCL && sendData: TCL && sendEditData} />
 	</Title>
-	<Input data={data} setData={setData} />
-	<BottomNavigator />
+	<Input inputProps={{title, yourConfession, setTitle, setYourConfession}} setActiveNavBar={setActiveNavBar} editConfession={editConfession}/>
+	{activeNavBar && <BottomNavigator />}
 	</main>
 	
 )

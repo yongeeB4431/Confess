@@ -26,9 +26,11 @@ const ConfessionSchema = new Schema({
 	},
 	editHistory: [
 		{
+		
 			yourConfession: String,
 			date: String,
-			day: String
+			day: String,
+			time: String
 		}
 	]
 })

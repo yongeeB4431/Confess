@@ -1,0 +1,27 @@
+.container {
+  margin: 10px;
+}
+.dateTime {
+  display: flex;
+  flex-direction: row;
+}
+
+.dateTime .date {
+  color: orange;
+  width: 80%;
+  text-align: center;
+}
+
+.dateTime .time {
+  color: green;
+}
+
+.message {
+  margin: 10px;
+}
+
+.message .confession {
+  color: burlywood;
+  white-space: pre-line;
+  line-height: 1.6;
+}

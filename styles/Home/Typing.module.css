@@ -1,23 +1,25 @@
-.typing{
-	padding-top: 10px;
-	color: burlywood;
-	margin: 20px;
-	font-size: 23px;
-	padding-left: 20px;
-	opacity: 90%;
-	line-height: 1.2;
-	background-color: rgba(0,0,0,0.5);
+.typing {
+  padding-top: 10px;
+  color: burlywood;
+  margin: 20px;
+  font-size: 18px;
+  font-style: italic;
+  padding-left: 20px;
+  opacity: 80%;
+  font-family: "Open Sans";
+  line-height: 1.6;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.confession{
-	position: absolute;
-	bottom: 15%;
-	left: 50%;
-	transform: translateX(-50%);
-	background: linear-gradient( crimson, whitesmoke);
-	text-align: center;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
-	-webkit-background-clip: text;
-	font-weight: bold;
+.confession {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(crimson, whitesmoke);
+  text-align: center;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-weight: bold;
 }

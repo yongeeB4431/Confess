@@ -1,196 +1,188 @@
-.title{
-	font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri, 'Gill Sans', sans-serif;
-	box-sizing: border-box;
-	transform-origin: left;
-	transition-delay: .2s;
-	transition-duration: 5s;
-	transition-timing-function: linear;
+.title {
+  font-family: "Roboto";
+  box-sizing: border-box;
+  transform-origin: left;
+  transition-delay: 0.2s;
+  transition-duration: 5s;
+  transition-timing-function: linear;
 
-	/* width: 70%; */
-
+  /* width: 70%; */
 }
-.title span{
-	font-size: 36px;
-	letter-spacing:0.01em;
-	
-}
-
-.title:hover{
-	transform: scale(0.8);
-	
-}
-.title span:nth-child(1){
-	font-size: 40px;
-	color: crimson;
-	font-weight: 800;
-	animation: C 5s linear .5s infinite;
+.title span {
+  font-size: 30px;
+  font-weight: bolder;
+  letter-spacing: 0.01em;
 }
 
-@keyframes C{
-	50%{
-		color: orange;
-	}
+.title:hover {
+  transform: scale(0.8);
+}
+.title span:nth-child(1) {
+  font-size: 33px;
+  color: crimson;
+  font-weight: 800;
+  animation: C 5s linear 0.5s infinite;
 }
 
-.title span:nth-child(2){
-	color: orange;
-	font-weight: 800;
-	animation: o 5s linear .5s infinite;
-	
+@keyframes C {
+  50% {
+    color: orange;
+  }
 }
 
-@keyframes o{
-	50%{
-		color: crimson;
-	}
+.title span:nth-child(2) {
+  color: orange;
+  font-weight: 800;
+  animation: o 5s linear 0.5s infinite;
 }
 
-.title span:nth-child(3){
-	color: brown;
-	font-weight: 800;
-	animation: n 5s linear .5s infinite;
-	
+@keyframes o {
+  50% {
+    color: crimson;
+  }
 }
 
-@keyframes n{
-	50%{
-		color: pink;
-	}
+.title span:nth-child(3) {
+  color: brown;
+  font-weight: 800;
+  animation: n 5s linear 0.5s infinite;
 }
 
-.title span:nth-child(4){
-	color: pink;
-	font-weight: 800;
-	animation: f 5s linear .5s infinite;
+@keyframes n {
+  50% {
+    color: pink;
+  }
 }
 
-@keyframes f{
-	50%{
-		color: brown;
-	}
+.title span:nth-child(4) {
+  color: pink;
+  font-weight: 800;
+  animation: f 5s linear 0.5s infinite;
 }
 
-.title span:nth-child(5){
-	color: purple;
-	font-weight: 800;
-	animation: e 5s linear .5s infinite;
-}
- 
-@keyframes e{
-	50%{
-		color: darkorange;
-	}
+@keyframes f {
+  50% {
+    color: brown;
+  }
 }
 
-.title span:nth-child(6){
-	color: darkorange;
-	font-weight: 800;
-	animation: s 5s linear .5s infinite;
+.title span:nth-child(5) {
+  color: purple;
+  font-weight: 800;
+  animation: e 5s linear 0.5s infinite;
 }
 
-@keyframes s{
-	50%{
-		color: brown;
-	}
+@keyframes e {
+  50% {
+    color: darkorange;
+  }
 }
 
-.title span:nth-child(7){
-	color: darkorange;
-	font-weight: 800;
-	animation: ss 5s linear .5s infinite;
+.title span:nth-child(6) {
+  color: darkorange;
+  font-weight: 800;
+  animation: s 5s linear 0.5s infinite;
 }
 
-@keyframes ss{
-	50%{
-		color: gray;
-	}
+@keyframes s {
+  50% {
+    color: brown;
+  }
 }
 
-.title span:nth-child(8){
-	color: pink;
-	font-weight: 800;
-	animation: i 5s linear .5s infinite;
+.title span:nth-child(7) {
+  color: darkorange;
+  font-weight: 800;
+  animation: ss 5s linear 0.5s infinite;
 }
 
-@keyframes i{
-	50%{
-		color: orange;
-	}
+@keyframes ss {
+  50% {
+    color: gray;
+  }
 }
 
-.title span:nth-child(9){
-	color: orange;
-	font-weight: 800;
-	animation: io 5s linear .5s infinite;
+.title span:nth-child(8) {
+  color: pink;
+  font-weight: 800;
+  animation: i 5s linear 0.5s infinite;
 }
 
-.titleContainer{
-	display: flex;
-	box-sizing: border-box;
-	flex-direction: row;
-	height: 20vh;
-	justify-content: space-around;
-	align-items: center;
+@keyframes i {
+  50% {
+    color: orange;
+  }
 }
 
-@keyframes io{
-	50%{
-		color: pink;
-	}
+.title span:nth-child(9) {
+  color: orange;
+  font-weight: 800;
+  animation: io 5s linear 0.5s infinite;
 }
 
-.title span:nth-child(10){
-	color: crimson;
-	font-weight: 800;
-	animation: nn 5s linear .5s infinite;
+.titleContainer {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  height: 20vh;
+  justify-content: space-around;
+  align-items: center;
 }
 
-@keyframes nn{
-	50%{
-		color: darkred;
-	}
-} 
-.titleContainer{
-	display: flex;
-	justify-content: space-around;
-	flex-direction: row;
-}
-.Audio{
-	position: relative;
-	width:50px;
-	height: 50px;
-	border-radius: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-top: 10px;
-	overflow:hidden;
-	
-}
-.Audio::before{
-	content: "";
-	position: absolute;
-	width: 50px;
-	height: 50px;
-	background: linear-gradient(transparent, crimson);
-	animation: rotateCircle 3s linear .5s infinite;
+@keyframes io {
+  50% {
+    color: pink;
+  }
 }
 
-.Audio::after{
-	content: "";
-	position: absolute;
-	inset: 2px;
-	background: black; 
-	border-radius: 50%;
-
-}
-@keyframes rotateCircle{
-	from{
-	transform: rotate(0deg);
-	}
-	to{
-	transform: rotate(360deg)
-	}
+.title span:nth-child(10) {
+  color: crimson;
+  font-weight: 800;
+  animation: nn 5s linear 0.5s infinite;
 }
 
+@keyframes nn {
+  50% {
+    color: darkred;
+  }
+}
+.titleContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.Audio {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.Audio::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(transparent, crimson);
+  animation: rotateCircle 3s linear 0.5s infinite;
+}
 
+.Audio::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: black;
+  border-radius: 50%;
+}
+@keyframes rotateCircle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,33 +1,42 @@
 import {useState} from "react";
 import styles from "../../styles/Input/Input.module.css"
-function Input(props){
-	const {data, setData} = props;
+function Input({inputProps, setActiveNavBar, editConfession}){
+	const {title, yourConfession, setTitle, setYourConfession} = inputProps;
+	let tCC =	title.length >= 7 ? true : false;
+	let cCC = yourConfession.length >= 10 ? true : false
+	const [tC, setTc] = useState(tCC)
+	const [cC, setCc] = useState(cCC)
 
-	// Title Confession length confirmation
-	const [TCLC, setTCLC] = useState({
-		tC: false,
-		cC: false
-	}) 
 	const handleChangeTitle = e => {
-		e.target.value.length >= 7 ? setTCLC((T)=>({...T,tC: true})) : setTCLC((T)=>({...T, tC:false}));
-		setData(data=>({...data, title: e.target.value }))
+		setTitle(e.target.value)
+		title.length >= 7 ? setTc(true) :setTc(false);
 
 	}
 
 	const handleChangeCofession = e => {
-		e.target.value.length >= 10 ? setTCLC((T)=>({...T,cC: true})) : setTCLC((T)=>({...T, cC:false}));
-		setData(data=>({...data, yourConfession: e.target.value }))
+		setYourConfession(e.target.value)
+		yourConfession.length >= 10 ? setCc(true) : setCc(false);
+		
 	}
+
+	const handleFocus = () => setActiveNavBar(false)
+	
+
+	const handleBlur = () => setActiveNavBar(true)
+
+	let obj = Object.keys(editConfession).length === 0
 
 return(
 	<main className={styles.container}>
-		<input placeholder="title" onChange={handleChangeTitle} value={data.title} />
-		{!TCLC.tC && data.title.length > 0 ? <h5>Title length should be more than or equal to 7 </h5> : <></>}
+		<input placeholder="title" onChange={handleChangeTitle} value={title} onFocus
+		={handleFocus} onBlur={handleBlur} disabled={!obj} />
+		{!tC && title.length > 0 ? <h5>Title length should be more than or equal to 7 </h5> : <></>}
 		<div>
 		<textarea
-		placeholder="your confession...." value={data.yourConfession} onChange={handleChangeCofession} />
+		placeholder="your confession...." value={yourConfession} onChange={handleChangeCofession} onFocus
+		={handleFocus} onBlur={handleBlur} />
 		</div>
-		{!TCLC.cC && data.yourConfession.length > 0 ? <h5>your Confession length should be more than or equal to 10 </h5> : <></>}
+		{!cC && yourConfession.length > 0 ? <h5>your Confession length should be more than or equal to 10 </h5> : <></>}
 	</main>
 )
 }

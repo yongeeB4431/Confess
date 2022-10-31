@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import style from "../../styles/Message/EditFavorite.module.css"
 
 function EditFavorite({editHistory}){
-	console.log(editHistory)
 	let editLength = editHistory.length == 0 ? "none" : editHistory.length
 	return(
 		<div className={style.container}>

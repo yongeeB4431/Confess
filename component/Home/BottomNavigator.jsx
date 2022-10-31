@@ -22,7 +22,7 @@ return(
 			<Link href="/diary">
 				<a>
 					<FontAwesomeIcon icon={faBook} color="crimson" className={router.pathname == '/diary' ? `${style.Icon} ${style.active}` : style.Icon }  />
-					<h4 className={router.pathname == '/diary' ? style.Active : ""}>diary</h4>
+					<h4 className={router.pathname == '/diary' ? style.Active : ""}>confessions</h4>
 				</a>
 			</Link>
 			<Link href="/write">
