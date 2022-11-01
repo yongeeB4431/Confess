@@ -1,6 +1,6 @@
 .NavContainer {
   position: fixed;
-  bottom: 0px;
+  bottom: 10px;
   z-index: 5;
   width: 100%;
   background: black;
