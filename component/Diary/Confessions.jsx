@@ -3,6 +3,7 @@ import { faTrash, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../../styles/Diary/Confessions.module.css";
 import style from "../../styles/Home/Image.module.css";
+import { useEffect } from "react";
 function cutWords(words, num) {
   return words.length <= num ? words : words.substring(words, num) + "...";
 }
@@ -50,6 +51,12 @@ function Date(date) {
 }
 function Confessions({ confessions, handleDelete, delIcon }) {
   // _id, date, time, title, yourConfession, editHistory
+  const initialConfessions = confessions.length;
+  useEffect(() => {
+    if (initialConfessions !== confessions.confessions.length) {
+      window.location.reload();
+    }
+  }, [confessions.length]);
   return (
     <div
       className={style.scrollBar}

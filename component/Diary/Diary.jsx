@@ -23,7 +23,7 @@ function Diary({ data }) {
       setOrder([...data].reverse());
       setToggle(!toggle);
     } else {
-      setOrder(data);
+      setOrder([...data]);
       setToggle(!toggle);
     }
   };
