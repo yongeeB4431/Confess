@@ -31,7 +31,6 @@
 }
 
 .fixedTop .Container h1 {
-  width: 50%;
   background: linear-gradient(whitesmoke, crimson, rgba(255, 0, 0, 0.2));
   -webkit-text-fill-color: transparent;
   background-clip: text;

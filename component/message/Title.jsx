@@ -8,7 +8,7 @@ function Title({ title, editHistory, id }) {
   console.log(name);
   return (
     <div className={style.container}>
-      <Link href={`/edit/${id}`}>
+      <Link href={`/edit/${id}`} prefetch={true}>
         <a style={{ textDecoration: "none" }}>
           <FontAwesomeIcon
             icon={faHistory}

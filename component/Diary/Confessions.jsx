@@ -66,7 +66,7 @@ function Confessions({ confessions, handleDelete, delIcon }) {
                 className={styles.star}
               />
             </div>
-            <Link href={`/message/${confession._id}`}>
+            <Link href={`/message/${confession._id}`} prefetch={true}>
               <a style={{ textDecoration: "none" }}>
                 <div className={styles.confession}>
                   <p>

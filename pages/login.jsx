@@ -16,11 +16,13 @@ function Login() {
       Cookie.set("password", password);
       setPassword("");
       Router.push("/");
+      return;
     } else if (username == "basit" && password == "basit4431") {
       Cookie.set("username", username);
       Cookie.set("password", password);
       setPassword("");
       Router.push("/");
+      return;
     }
     setMessage("username or password is incorrect");
   };
@@ -104,6 +106,7 @@ function Login() {
           button {
             border-radius: 20px;
             padding: 9px;
+            border: none;
             font-size: 16px;
             font-family: "Open Sans";
             color: white;
