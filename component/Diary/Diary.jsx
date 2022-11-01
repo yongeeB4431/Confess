@@ -39,7 +39,7 @@ function Diary({ data }) {
   };
   useEffect(() => {
     setOrder([...data]);
-  }, [data.length]);
+  }, [data.length, order.length > 0 && order.length]);
   return (
     <>
       <Head>
