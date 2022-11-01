@@ -1,15 +1,27 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/login",
+        permanent: false,
+      },
+    ];
+  },
   reactStrictMode: true,
   swcMinify: true,
-  eslint:{
+  eslint: {
     ignoreDuringBuilds: true,
   },
-  typescript:{
+  typescript: {
     ignoreBuildErrors: true,
   },
   env: {
-    "MONGO_URI": "mongodb+srv://yongeeB4431:adewunmi2017@cluster0.xn5ulln.mongodb.net/?retryWrites=true&w=majority"
+    MONGO_URI:
+      "mongodb+srv://yongeeB4431:adewunmi2017@cluster0.xn5ulln.mongodb.net/?retryWrites=true&w=majority",
+    MONGO_URI2:
+      "mongodb+srv://yongeeb4431:yongeeB4431@cluster0.q1vxbbb.mongodb.net/?retryWrites=true&w=majority",
   },
   webpack(config, options) {
     const { isServer } = options;
@@ -18,13 +30,13 @@ const nextConfig = {
       exclude: config.exclude,
       use: [
         {
-          loader: require.resolve('url-loader'),
+          loader: require.resolve("url-loader"),
           options: {
             limit: config.inlineImageLimit,
-            fallback: require.resolve('file-loader'),
+            fallback: require.resolve("file-loader"),
             publicPath: `${config.assetPrefix}/_next/static/images/`,
-            outputPath: `${config.isServer ? '../' : ''}static/images/`,
-            name: '[name]-[hash].[ext]',
+            outputPath: `${config.isServer ? "../" : ""}static/images/`,
+            name: "[name]-[hash].[ext]",
             esModule: config.esModule || false,
           },
         },
@@ -33,6 +45,6 @@ const nextConfig = {
 
     return config;
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

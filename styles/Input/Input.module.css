@@ -1,74 +1,73 @@
-.container{
-	width: 100%;
-	height: 68vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.container {
+  width: 100%;
+  height: 68vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.container input{
-	margin-top: 10px;
-	width: 80%;
-	background: transparent;
-	color: crimson;
-	padding: 6px;
-	box-shadow: 0px 0px 15px rgba(255,255,255,0.1);
-	font-size: 18px;
-	outline: none;
-	text-align: center;
-	border-radius: 25px;
-	border: none;
-	caret-color: crimson;
-	transition: all 1s linear .5s;
+.container input {
+  margin-top: 10px;
+  width: 80%;
+  background: transparent;
+  color: crimson;
+  padding: 6px;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+  font-size: 18px;
+  font-family: "Open Sans";
+  outline: none;
+  text-align: center;
+  border-radius: 25px;
+  border: none;
+  caret-color: crimson;
+  transition: all 1s linear 0.5s;
 }
-.container input::placeholder{
-	color: crimson;
-	opacity: 20%;
-	font-weight: bold;
-	text-align: center;
-	letter-spacing: 3px;
-	text-transform: capitalize;
-	
-
-
+.container input::placeholder {
+  color: crimson;
+  opacity: 20%;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: capitalize;
 }
-.container input:hover{
-	box-shadow: 0px 0px 10px rgba(220,20,60,0.1);
-	transform: scale(1.075);
+.container input:hover {
+  box-shadow: 0px 0px 10px rgba(220, 20, 60, 0.1);
+  transform: scale(1.075);
 }
 
-.container h5{
-	padding-top: 5px;
-	color: crimson;
-	opacity: 50%;
+.container h5 {
+  padding-top: 5px;
+  color: crimson;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
 }
 
-.container textarea{
-	resize: none;
-	width: 80vw;
-	height: 52vh;
-	opacity: 60%;
-	color: whitesmoke;
-	overflow: hidden;
-	font-size: 17px;
-	padding: 10px;
-	box-sizing: border-box;
-	padding-top: 10px;
-	background: none;
-	border-radius: 25px;
-	white-space: pre-line;
-	border: none;
-	outline: none;
-	margin-top: 15px;
-	text-align:left;
-	box-shadow: 0px 0px 10px rgba(255,255,255,0.1);
-	
+.container textarea {
+  resize: none;
+  width: 80vw;
+  height: 52vh;
+  opacity: 60%;
+  color: whitesmoke;
+  overflow: hidden;
+  font-size: 17px;
+  padding: 10px;
+  box-sizing: border-box;
+  padding-top: 10px;
+  background: none;
+  font-family: "Fira Code";
+  border-radius: 25px;
+  white-space: pre-line;
+  border: none;
+  outline: none;
+  margin-top: 15px;
+  text-align: left;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
 }
 
-.container textarea::placeholder{
-	color: gray;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+.container textarea::placeholder {
+  color: gray;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

@@ -81,12 +81,7 @@ function Confessions({ confessions, handleDelete, delIcon }) {
             <div className={styles.dateEditedDelete}>
               <h5 className={styles.date}>{Date(confession.date)}</h5>
               <h5 className={styles.edited}>
-                Edited:{" "}
-                <span>
-                  {confession.editHistory.length == 0
-                    ? "none"
-                    : confession.editHistory.length}
-                </span>
+                Written: <span>{confession.user}</span>
               </h5>
               <FontAwesomeIcon
                 icon={faTrash}

@@ -1,13 +1,53 @@
+import Router from "next/router";
+import { useState } from "react";
+import Cookie from "js-cookie";
 function Login() {
+  const [username, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleUserName = (e) => setUserName(e.target.value);
+
+  const handlePassword = (e) => setPassword(e.target.value);
+
+  const handleSubmit = () => {
+    if (username == "chiso" && password == "chiso4431") {
+      Cookie.set("username", username);
+      Cookie.set("password", password);
+      setPassword("");
+      Router.push("/");
+    } else if (username == "basit" && password == "basit4431") {
+      Cookie.set("username", username);
+      Cookie.set("password", password);
+      setPassword("");
+      Router.push("/");
+    }
+    setMessage("username or password is incorrect");
+  };
+
   return (
     <main>
       <h2>Confession</h2>
       <div>
         <div className="flex">
-          <input type="text" name="username" placeholder="username" />
-          <input type="password" placeholder="password" />
-          <button type="submit">submit</button>
+          <input
+            type="text"
+            name="username"
+            placeholder="username"
+            value={username}
+            onChange={handleUserName}
+          />
+          <input
+            type="password"
+            placeholder="password"
+            value={password}
+            onChange={handlePassword}
+          />
+          <button type="submit" onClick={handleSubmit}>
+            submit
+          </button>
         </div>
+        <p>{message}</p>
       </div>
       <style jsx>
         {`
@@ -17,17 +57,17 @@ function Login() {
             top: 50%;
             transform: translateY(-50%);
           }
-		  h2{
-			color: transparent;
-			text-transform: uppercase;
-			font-family: 'Open Sans';
-			text-align: center;
-			opacity: 30%;
-			letter-spacing: 0.2em;
-			background: linear-gradient(crimson, transparent);
-			background-clip: text;
-			-webkit-background-clip: text;
-		  }
+          h2 {
+            color: transparent;
+            text-transform: uppercase;
+            font-family: "Open Sans";
+            text-align: center;
+            opacity: 30%;
+            letter-spacing: 0.2em;
+            background: linear-gradient(crimson, transparent);
+            background-clip: text;
+            -webkit-background-clip: text;
+          }
           .flex {
             display: flex;
             flex-direction: column;
@@ -48,13 +88,13 @@ function Login() {
             color: crimson;
             font-size: 20px;
             font-family: "Fira Code";
-			transition: all 1s linear .5s;
+            transition: all 1s linear 0.5s;
           }
-		  .flex input:hover{
-			box-shadow: 1px 1px 5px purple;
-			color: white;
-			opacity: 50%;
-		  }
+          .flex input:hover {
+            box-shadow: 1px 1px 5px purple;
+            color: white;
+            opacity: 50%;
+          }
           .flex input::placeholder {
             color: gray;
             font-family: "Fira Code";
@@ -68,13 +108,19 @@ function Login() {
             font-family: "Open Sans";
             color: white;
             background: rgba(220, 20, 60, 0.5);
-			transition: all 1s linear .5s;
-		  }
-            button:hover {
-              background: transparent;
-              color: crimson;
-              box-shadow: 1px 1px 5px rgba(220, 20, 60, 0.5);
-            }
+            transition: all 1s linear 0.5s;
+          }
+          button:hover {
+            background: transparent;
+            color: crimson;
+            box-shadow: 1px 1px 5px rgba(220, 20, 60, 0.5);
+          }
+          p {
+            color: red;
+            text-align: center;
+            margin: 10px 0;
+            font-family: "Fira Code";
+            opacity: 70%;
           }
         `}
       </style>
