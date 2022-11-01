@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import Delete from "../Delete/Delete";
 import { useState, useEffect } from "react";
 import BottomNav from "../Home/BottomNavigator";
@@ -40,10 +39,7 @@ function Diary({ data }) {
   useEffect(() => {
     setOrder([...data]);
   }, [data.length]);
-  const router = useRouter();
-  const refreshData = () => {
-    router.replace(router.asPath);
-  };
+
   return (
     <>
       <Head>

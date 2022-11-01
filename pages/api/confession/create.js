@@ -10,9 +10,6 @@ export default async function addConfession(req, res) {
     const confession = await Confession.create(req.body);
 
     res.json({ confession });
-    if (res.status <= 300) {
-      refreshData();
-    }
   } catch (err) {
     console.log(err);
   }
