@@ -7,7 +7,7 @@ function Confession({ confession }) {
     <div className={styles.scrollBar}>
       <div className={style.container}>
         <p>
-          <Typewriter typeSpeed={50} words={[confession]} />
+          <Typewriter typeSpeed={300} words={[confession]} />
         </p>
       </div>
     </div>
