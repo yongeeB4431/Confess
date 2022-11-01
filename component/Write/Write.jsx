@@ -1,3 +1,5 @@
+import write from "../../styles/Home/WriteIcon.module.css";
+import Router from "next/router";
 import Head from "next/head";
 import { useState } from "react";
 import Title from "../Home/title";
@@ -5,9 +7,9 @@ import Input from "./Input";
 import BottomNavigator from "../Home/BottomNavigator";
 import Audio from "../Home/Audio";
 import styles from "../../styles/Home/Title.module.css";
-import Icon from "../Home/WriteIcon";
 import style from "../../styles/Input/Write.module.css";
 import { Request } from "../../request/request";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { DateAndTime } from "../../functions/DateAndTime";
 import Cookie from "js-cookie";
@@ -22,10 +24,10 @@ function Write({ editConfession }) {
   const [yourConfession, setYourConfession] = useState(c);
   const [activeNavBar, setActiveNavBar] = useState(true);
   const d = new DateAndTime();
+  let TCL = title.length >= 7 && yourConfession.length >= 10;
   function sendData() {
     const { day, Date, time } = d.handleData();
     const name = Cookie.get("username");
-    console.log(name);
     new Request("/api/confession/create").createNewCofession(
       day,
       Date,
@@ -34,11 +36,10 @@ function Write({ editConfession }) {
       yourConfession,
       name
     );
+    Router.push("/diary");
   }
 
   // confirm title and confession length before sending into database
-  let TCL = title.length >= 7 && yourConfession.length >= 10;
-  let linkPath = TCL ? "/diary" : "/write";
   async function sendEditData() {
     const { day, Date, time } = d.handleData();
     await fetch(`/api/confession/edit/${editConfession._id}`, {
@@ -54,16 +55,35 @@ function Write({ editConfession }) {
         "Content-Type": "application/json",
       },
     });
+    Router.push("/diary");
   }
   const src =
     "https://dl.dropbox.com/s/8377unyfvmh3zs1/Beautiful%20Sad%20Piano%20Instrumental%20Song%20-%20Everywhere.mp3?dl=0";
+  function handleSend() {
+    console.log(TCL);
+    if (Object.keys(editConfession).length === 0) {
+      return TCL && sendData();
+    } else if (TCL) {
+      return sendEditData();
+    }
+  }
   return (
     <main className={style.container}>
       <Head>
         <title>write</title>
       </Head>
       <Title leftSide={<Audio styling={styles.Audio} source={src} />}>
-        <Icon
+        <div className={write.iconContainer}>
+          <div className={write.centerPencil}>
+            <FontAwesomeIcon
+              className={write.icon}
+              icon={faPaperPlane}
+              onClick={handleSend}
+            />
+          </div>
+        </div>
+
+        {/* <Icon
           iconName={faPaperPlane}
           link={linkPath}
           sendData={
@@ -71,7 +91,7 @@ function Write({ editConfession }) {
               ? TCL && sendData
               : TCL && sendEditData
           }
-        />
+        /> */}
       </Title>
       <Input
         inputProps={{ title, yourConfession, setTitle, setYourConfession }}
