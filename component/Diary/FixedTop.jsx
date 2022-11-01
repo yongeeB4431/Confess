@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import styles from "../../styles/Diary/FixedTop.module.css";
 import Audio from "../Home/Audio";
 
