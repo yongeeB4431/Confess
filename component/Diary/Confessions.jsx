@@ -51,12 +51,7 @@ function Date(date) {
 }
 function Confessions({ confessions, handleDelete, delIcon }) {
   // _id, date, time, title, yourConfession, editHistory
-  const initialConfessions = confessions.length;
-  useEffect(() => {
-    if (initialConfessions !== confessions.confessions.length) {
-      window.location.reload();
-    }
-  }, [confessions.length]);
+
   return (
     <div
       className={style.scrollBar}
