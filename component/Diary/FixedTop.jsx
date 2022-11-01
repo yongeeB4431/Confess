@@ -16,7 +16,7 @@ function FixedTop({ handleToggle, toggle }) {
         </h1>
         <div className={styles.select}>
           <h5 className={styles.order} onClick={handleToggle}>
-            {toggle ? "Oldest first" : "Newest first"}
+            {toggle ? "Oldest First" : "Newest First"}
           </h5>
         </div>
 

@@ -11,7 +11,7 @@ function Diary({ data }) {
   console.log([...data].reverse());
   // const [del, setDel] = useState(false)
   const [delIcon, setDelIcon] = useState(false);
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
   const [confession, setConfession] = useState({});
 
   const handleDelete = async ({ _id, title }) => {
@@ -38,7 +38,7 @@ function Diary({ data }) {
     setOrder(order.filter((o) => o._id !== confession._id));
   };
   useEffect(() => {
-    setOrder([...data].reverse());
+    setOrder([...data]);
   }, [data.length]);
   return (
     <>
