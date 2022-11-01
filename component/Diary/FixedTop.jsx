@@ -11,7 +11,7 @@ function FixedTop({ handleToggle, toggle }) {
     "https://dl.dropbox.com/s/4gqatxg4zrc8hgz/Westlife%20-%20Queen%20Of%20My%20Heart%20%28Official%20Video%29%20%281%29.mp3?dl=0";
   useEffect(() => {
     window.location.reload();
-  }, [toggle]);
+  }, [!toggle]);
   return (
     <main className={styles.fixedTop}>
       <div className={styles.Container}>
