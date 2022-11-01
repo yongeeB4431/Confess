@@ -8,7 +8,6 @@ import DataNotFound from "../DataNotFound/DataNotFound";
 
 function Diary({ data }) {
   const [order, setOrder] = useState([]);
-  console.log([...data].reverse());
   // const [del, setDel] = useState(false)
   const [delIcon, setDelIcon] = useState(false);
   const [toggle, setToggle] = useState(false);
@@ -20,10 +19,10 @@ function Diary({ data }) {
   };
   const handleToggle = () => {
     if (!toggle) {
-      setOrder([...data].reverse());
+      setOrder((prevData) => [...prevData].reverse());
       setToggle(!toggle);
     } else {
-      setOrder([...data]);
+      setOrder((prevData) => [...prevData]);
       setToggle(!toggle);
     }
   };
@@ -39,7 +38,7 @@ function Diary({ data }) {
   };
   useEffect(() => {
     setOrder([...data]);
-  }, [data.length, order.length > 0 && order.length]);
+  }, [data.length]);
   return (
     <>
       <Head>
