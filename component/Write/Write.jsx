@@ -59,14 +59,17 @@ function Write({ editConfession }) {
   }
   const src =
     "https://dl.dropbox.com/s/8377unyfvmh3zs1/Beautiful%20Sad%20Piano%20Instrumental%20Song%20-%20Everywhere.mp3?dl=0";
+  let oL = Object.keys(editConfession).length === 0;
   function handleSend() {
-    console.log(TCL);
-    if (Object.keys(editConfession).length === 0) {
-      return TCL && sendData();
-    } else if (TCL) {
+    if (TCL) {
+      if (oL) {
+        return sendData();
+      }
       return sendEditData();
     }
+    console.log("hello world");
   }
+
   return (
     <main className={style.container}>
       <Head>

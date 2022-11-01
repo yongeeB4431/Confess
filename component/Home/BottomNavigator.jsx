@@ -9,7 +9,7 @@ function BottomNav() {
   return (
     <main className={style.NavContainer}>
       <div className={style.Nav}>
-        <Link href="/" prefetch={true}>
+        <Link href="/">
           <a>
             <FontAwesomeIcon
               icon={faHome}
@@ -23,7 +23,7 @@ function BottomNav() {
             <h4 className={router.pathname == "/" ? style.Active : ""}>home</h4>
           </a>
         </Link>
-        <Link href="/diary" prefetch={true}>
+        <Link href="/diary">
           <a>
             <FontAwesomeIcon
               icon={faBook}
@@ -39,7 +39,7 @@ function BottomNav() {
             </h4>
           </a>
         </Link>
-        <Link href="/write" prefetch={true}>
+        <Link href="/write">
           <a>
             <FontAwesomeIcon
               icon={faPencil}

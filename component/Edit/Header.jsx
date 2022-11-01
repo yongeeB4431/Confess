@@ -5,7 +5,7 @@ import Link from "next/link";
 function Header({ title, editLength, id }) {
   return (
     <div className={styles.container}>
-      <Link href={`/message/${id}`} prefetch={true}>
+      <Link href={`/message/${id}`}>
         <FontAwesomeIcon
           icon={faArrowLeft}
           color="white"
