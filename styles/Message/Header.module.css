@@ -6,7 +6,7 @@
 }
 
 .container h2 {
-  font-size: 15px;
+  font-size: 10px;
   color: crimson;
   align-self: center;
   color: transparent;
@@ -15,7 +15,6 @@
 }
 
 .container h2 .time {
-  font-size: 3vw;
   opacity: 50%;
   font-style: italic;
   color: crimson;
