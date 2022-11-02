@@ -31,8 +31,7 @@ function Title({ title, editHistory, id }) {
       <h1 className={style.title}>{title}</h1>
       <Link
         href={{
-          pathname: "/write",
-          query: { id },
+          pathname: `/edit/confession/${id}`,
         }}
       >
         <span className={style.edit}>edit</span>

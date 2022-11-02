@@ -14,14 +14,9 @@ import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { DateAndTime } from "../../functions/DateAndTime";
 import Cookie from "js-cookie";
 
-function Write({ editConfession }) {
-  const t = editConfession.title !== undefined ? editConfession.title : "";
-  const c =
-    editConfession.yourConfession !== undefined
-      ? editConfession.yourConfession
-      : "";
-  const [title, setTitle] = useState(t);
-  const [yourConfession, setYourConfession] = useState(c);
+function Write() {
+  const [title, setTitle] = useState("");
+  const [yourConfession, setYourConfession] = useState("");
   const [activeNavBar, setActiveNavBar] = useState(true);
   const d = new DateAndTime();
   let TCL = title.length >= 7 && yourConfession.length >= 10;
@@ -40,35 +35,9 @@ function Write({ editConfession }) {
   }
 
   // confirm title and confession length before sending into database
-  async function sendEditData() {
-    const { day, Date, time } = d.handleData();
-    await fetch(`/api/confession/edit/${editConfession._id}`, {
-      method: "POST",
-      body: JSON.stringify({
-        yourConfession,
-        day,
-        time,
-        date: Date,
-        updateConfession: editConfession.yourConfession,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    Router.push("/diary");
-  }
+
   const src =
     "https://dl.dropbox.com/s/8377unyfvmh3zs1/Beautiful%20Sad%20Piano%20Instrumental%20Song%20-%20Everywhere.mp3?dl=0";
-  let oL = Object.keys(editConfession).length === 0;
-  function handleSend() {
-    if (TCL) {
-      if (oL) {
-        return sendData();
-      }
-      return sendEditData();
-    }
-    console.log("hello world");
-  }
 
   return (
     <main className={style.container}>
@@ -81,25 +50,14 @@ function Write({ editConfession }) {
             <FontAwesomeIcon
               className={write.icon}
               icon={faPaperPlane}
-              onClick={handleSend}
+              onClick={TCL && sendData}
             />
           </div>
         </div>
-
-        {/* <Icon
-          iconName={faPaperPlane}
-          link={linkPath}
-          sendData={
-            Object.keys(editConfession).length === 0
-              ? TCL && sendData
-              : TCL && sendEditData
-          }
-        /> */}
       </Title>
       <Input
         inputProps={{ title, yourConfession, setTitle, setYourConfession }}
         setActiveNavBar={setActiveNavBar}
-        editConfession={editConfession}
       />
       {activeNavBar && <BottomNavigator />}
     </main>

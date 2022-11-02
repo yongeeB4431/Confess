@@ -1,20 +1,10 @@
 import { useState } from "react";
 import styles from "../../styles/Input/Input.module.css";
-function Input({ inputProps, setActiveNavBar, editConfession }) {
-  const { title, yourConfession, setTitle, setYourConfession } = inputProps;
-  let tCC = title.length >= 7 ? true : false;
-  let cCC = yourConfession.length >= 10 ? true : false;
-  const [tC, setTc] = useState(tCC);
-  const [cC, setCc] = useState(cCC);
-
-  const handleChangeTitle = (e) => {
-    setTitle(e.target.value);
-    title.length >= 7 ? setTc(true) : setTc(false);
-  };
+function Input({ setActiveNavBar, data, setYourConfession, yourConfession }) {
+  const cC = yourConfession.length >= 10;
 
   const handleChangeCofession = (e) => {
     setYourConfession(e.target.value);
-    yourConfession.length >= 10 ? setCc(true) : setCc(false);
   };
 
   const handleFocus = () => setActiveNavBar(false);
@@ -25,16 +15,11 @@ function Input({ inputProps, setActiveNavBar, editConfession }) {
     <main className={styles.container}>
       <input
         placeholder="title"
-        onChange={handleChangeTitle}
-        value={title}
+        value={data.title}
         onFocus={handleFocus}
         onBlur={handleBlur}
+        disabled
       />
-      {!tC && title.length > 0 ? (
-        <h5>Title length should be more than or equal to 7 </h5>
-      ) : (
-        <></>
-      )}
       <div>
         <textarea
           placeholder="your confession...."
