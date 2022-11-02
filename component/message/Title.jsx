@@ -5,7 +5,6 @@ import { faHistory } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Title({ title, editHistory, id }) {
   let name = Cookie.get("username");
-  console.log(name);
   return (
     <div className={style.container}>
       <Link href={`/edit/${id}`}>

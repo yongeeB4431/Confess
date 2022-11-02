@@ -11,6 +11,6 @@ export default async function addConfession(req, res) {
 
     res.json({ confession });
   } catch (err) {
-    console.log(err);
+    res.json({ err });
   }
 }

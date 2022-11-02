@@ -13,7 +13,6 @@ function diary({ confessions }) {
   useEffect(() => {
     setConfess(confessions.confession);
   }, []);
-  console.log(confess);
   return (
     <>
       <Diary

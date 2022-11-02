@@ -23,10 +23,10 @@ function Header({ day, date, starred, id, time }) {
     <div className={style.container}>
       <Audio source={src} styling={styles.Audio} />
 
-      <h4>
+      <h2>
         <sub style={{ color: "crimson" }}>{time}</sub>{" "}
         <span className={style.day}>{day},</span> {date}
-      </h4>
+      </h2>
       <FontAwesomeIcon
         icon={faStar}
         color={star ? "yellow" : "white"}
