@@ -38,7 +38,7 @@ function Write({ data }) {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            opacity: 20%;
+            opacity: 70%;
           }
         `}
       </style>

@@ -79,7 +79,7 @@ function Info({ data }) {
             flex-direction: row;
             padding: 0 10px;
             opacity: 80%;
-            margin: 15px 0;
+            margin: 20px 0;
           }
           .infoContainer h4 {
             color: gray;

@@ -30,7 +30,6 @@ function Picture({ data }) {
             position: absolute;
             top: 50%;
             width: 100%;
-            background: red;
             transform: translateY(-50%);
           }
           img {
