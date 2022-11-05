@@ -1,30 +1,31 @@
 import Router from "next/router";
 import { useState } from "react";
 import Cookie from "js-cookie";
-function Login() {
+import { server } from "../config/index";
+function Login({ response }) {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleUserName = (e) => setUserName(e.target.value);
-
-  const handlePassword = (e) => setPassword(e.target.value);
+  const handleUserName = (e) => {
+    setUserName(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
 
   const handleSubmit = () => {
-    if (username == "chiso" && password == "chiso4431") {
-      Cookie.set("username", username);
-      Cookie.set("password", password);
-      setPassword("");
-      Router.push("/");
-      return;
-    } else if (username == "basit" && password == "basit4431") {
-      Cookie.set("username", username);
-      Cookie.set("password", password);
-      setPassword("");
-      Router.push("/");
-      return;
-    }
-    setMessage("username or password is incorrect");
+    response.message.map((data) => {
+      if (data.user == username && data.password == password) {
+        Cookie.set("name", data.name);
+        setMessage("Authenticating User");
+        Router.push("/");
+        setPassword("");
+        return;
+      } else {
+        setMessage("username or password is incorrect");
+      }
+    });
   };
 
   return (
@@ -130,5 +131,21 @@ function Login() {
     </main>
   );
 }
-
+export async function getServerSideProps(context) {
+  const { req } = context;
+  const host = req.headers.host;
+  try {
+    let data = await fetch(`${server}${host}/api/users/find`);
+    let response = await data.json();
+    return {
+      props: {
+        response,
+      },
+    };
+  } catch (err) {
+    return {
+      props: 1,
+    };
+  }
+}
 export default Login;

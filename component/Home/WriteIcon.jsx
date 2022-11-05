@@ -1,20 +1,48 @@
 import Link from "next/link";
-import style from "../../styles/Home/WriteIcon.module.css";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-function Write(props) {
+function Write({ data }) {
   return (
-    <div className={style.iconContainer}>
-      <div className={style.centerPencil}>
-        <Link href={props.link}>
-          <FontAwesomeIcon
-            icon={props.iconName}
-            className={style.icon}
-            onClick={props.sendData}
-          />
-        </Link>
-      </div>
-    </div>
+    <main>
+      <Link href={`/profile/${data[0]._id}`}>
+        <div className="pictureContainer">
+          {data[0].picture ? (
+            <img src={data[0].picture}></img>
+          ) : (
+            <FontAwesomeIcon
+              icon={faUser}
+              color="crimson"
+              style={{
+                fontSize: "24px",
+              }}
+            />
+          )}
+        </div>
+      </Link>
+      <style jsx>
+        {`
+          h1 {
+            color: red;
+          }
+          div {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border-bottom: 1px solid crimson;
+            box-shadow: 0px 0px 15px rgba(220, 20, 60, 0.2);
+          }
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            opacity: 20%;
+          }
+        `}
+      </style>
+    </main>
   );
 }
 

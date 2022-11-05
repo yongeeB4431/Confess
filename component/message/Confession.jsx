@@ -6,9 +6,7 @@ function Confession({ confession }) {
   return (
     <div className={styles.scrollBar}>
       <div className={style.container}>
-        <p>
-          <Typewriter typeSpeed={80} words={[confession]} />
-        </p>
+        <p>{confession}</p>
       </div>
     </div>
   );

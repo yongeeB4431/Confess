@@ -1,33 +1,46 @@
-import Head from "next/head"
+import { server } from "../config/index";
+import Head from "next/head";
 import Title from "../component/Home/title";
 import Picture from "../component/Home/Image";
 import Write from "../component/Home/WriteIcon";
-import BottomNavigator from '../component/Home/BottomNavigator'
+import BottomNavigator from "../component/Home/BottomNavigator";
 import Audio from "../component/Home/Audio";
-import {
-	faPencil
-  } from "@fortawesome/free-solid-svg-icons";
+import { faPencil } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/Home/Title.module.css";
+import Cookie from "js-cookie";
 
-
-
-
-function Homes(){
-  const src = "https://dl.dropbox.com/s/q4tw1qorwwoi5kc/Crying%20Alone%20-%20Sad%20%26%20Emotional%20Piano%20Song%20Instrumental.mp3?dl=0"
+function Homes({ response }) {
+  let name = Cookie.get("name");
+  let data = response.message.filter((data) => data.name == name);
+  console.log(data);
+  const src =
+    "https://dl.dropbox.com/s/q4tw1qorwwoi5kc/Crying%20Alone%20-%20Sad%20%26%20Emotional%20Piano%20Song%20Instrumental.mp3?dl=0";
   return (
     <div>
       <Head>
         <title>Home</title>
       </Head>
-      <Title leftSide={<Write iconName={faPencil} link="/write" />}>
-      <Audio styling={styles.Audio} source={src} />
+      <Title leftSide={<Write data={data} />}>
+        <Audio styling={styles.Audio} source={src} />
       </Title>
-     <Picture />
-     <BottomNavigator  />
-     </div>
-  )
+      <Picture />
+      <BottomNavigator />
+    </div>
+  );
 }
 
-
-
+{
+  /* <Write iconName={faPencil} link="/write" /> */
+}
+export async function getServerSideProps(context) {
+  const { req } = context;
+  const host = req.headers.host;
+  let data = await fetch(`${server}${host}/api/users/find`);
+  let response = await data.json();
+  return {
+    props: {
+      response,
+    },
+  };
+}
 export default Homes;

@@ -22,7 +22,7 @@ function Write() {
   let TCL = title.length >= 7 && yourConfession.length >= 10;
   function sendData() {
     const { day, Date, time } = d.handleData();
-    const name = Cookie.get("username");
+    const name = Cookie.get("name");
     new Request("/api/confession/create").createNewCofession(
       day,
       Date,

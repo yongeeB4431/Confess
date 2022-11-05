@@ -11,6 +11,7 @@ export default async function editConfession(req, res) {
     res.status(200);
     res.end(JSON.stringify(user));
   } catch (err) {
+    kdkdkdkdklld;
     res.json(err);
     res.status(405).end();
   }

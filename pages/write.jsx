@@ -1,6 +1,7 @@
 import Input from "../component/Write/Write";
-import { server } from "../config";
 
-function Write({ editConfession }) {
+function Write() {
   return <Input />;
 }
+
+export default Write;

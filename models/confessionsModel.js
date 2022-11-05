@@ -28,6 +28,7 @@ const ConfessionSchema = new Schema({
   starred: {
     type: Boolean,
   },
+  musicLink: String,
   editHistory: [
     {
       yourConfession: String,

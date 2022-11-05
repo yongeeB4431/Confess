@@ -11,7 +11,7 @@ function Title({ title, editHistory, id }) {
         <a style={{ textDecoration: "none" }}>
           <FontAwesomeIcon
             icon={faHistory}
-            color={editHistory.length > 0 ? "green" : "red"}
+            color={editHistory.length < 4 ? "green" : "red"}
             className={style.history}
           />
           <sub
@@ -29,11 +29,16 @@ function Title({ title, editHistory, id }) {
       </Link>
       <h1 className={style.title}>{title}</h1>
       <Link
-        href={{
-          pathname: `/edit/confession/${id}`,
-        }}
+        href={
+          editHistory.length < 4 ? `/edit/confession/${id}` : `/message/${id}`
+        }
       >
-        <span className={style.edit}>edit</span>
+        <span
+          className={style.edit}
+          style={{ background: editHistory.length ? "green" : "red" }}
+        >
+          edit
+        </span>
       </Link>
     </div>
   );

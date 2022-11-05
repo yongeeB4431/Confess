@@ -5,7 +5,7 @@ import styles from "../../styles/Home/Title.module.css";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Header({ day, date, starred, id, time }) {
+function Header({ day, date, starred, id, time, musicLink }) {
   const [star, setStar] = useState(starred);
   let src =
     "https://dl.dropbox.com/s/odwgcxty6ht11jr/Y2Mate.is%20-%20IF%20ONLY%20YOU%20KNEW%20HOW%20MUCH%20I%20LOVE%20YOU%20%20by%20Efisio%20Cross-PkG3yxQDLBI-160k-1660320316071.mp3?dl=0";
@@ -21,7 +21,7 @@ function Header({ day, date, starred, id, time }) {
   };
   return (
     <div className={style.container}>
-      <Audio source={src} styling={styles.Audio} />
+      <Audio source={musicLink || src} styling={styles.Audio} />
 
       <h2>
         <sub style={{ color: "crimson" }}>{time}</sub>{" "}
