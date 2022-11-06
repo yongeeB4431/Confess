@@ -2,6 +2,7 @@ import Link from "next/link";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Write({ data }) {
+  console.log(data);
   return (
     <main>
       <Link href={`/profile/${data[0]._id}`}>

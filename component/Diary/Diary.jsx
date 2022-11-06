@@ -35,13 +35,8 @@ function Diary({ data }) {
     }
   };
   const handleToggle = () => {
-    if (!toggle) {
-      setOrder((prevData) => [...prevData].reverse());
-      setToggle(!toggle);
-    } else {
-      setOrder((prevData) => [...prevData]);
-      setToggle(!toggle);
-    }
+    setOrder((prevData) => [...prevData].reverse());
+    setToggle(!toggle);
   };
 
   const handleX = () => {

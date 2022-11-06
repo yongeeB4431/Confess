@@ -6,6 +6,6 @@ export default async function find(req, res) {
     let data = await Info.find();
     res.json({ message: data });
   } catch (err) {
-    console.error(err.message);
+    res.json({ err: err.message });
   }
 }

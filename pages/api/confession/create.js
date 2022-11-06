@@ -7,6 +7,6 @@ export default async function addConfession(req, res) {
     await Confession.create(req.body);
     res.json({ message: "success" });
   } catch (err) {
-    res.json({ err });
+    res.json({ err: err.message });
   }
 }

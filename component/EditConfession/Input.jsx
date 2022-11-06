@@ -27,6 +27,7 @@ function Input({ setActiveNavBar, data, setYourConfession, yourConfession }) {
           onChange={handleChangeCofession}
           onFocus={handleFocus}
           onBlur={handleBlur}
+          spellCheck="false"
         />
       </div>
       {!cC && yourConfession.length > 0 ? (

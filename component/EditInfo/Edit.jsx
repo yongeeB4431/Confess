@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 import Router from "next/router";
 import style from "../../styles/Home/Image.module.css";
@@ -84,10 +85,15 @@ function Edit({ data }) {
     <>
       <main>
         <div className="saveContainer">
-          <FontAwesomeIcon icon={faArrowLeft} />
+          <Link href={"/editInfo/${d._id}"}>
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </Link>
           <h4 onClick={handleSave}>save</h4>
         </div>
-        <div className={style.scrollBar} style={{ height: "90vh" }}>
+        <div
+          className={style.scrollBar}
+          style={{ height: "80vh", marginBottom: "50px" }}
+        >
           <div className="inputContainer">
             <h4>Name</h4>
             <input name="name" value={name} onChange={handleName} />
@@ -136,7 +142,7 @@ function Edit({ data }) {
               onChange={handleFavoriteFood}
             />
           </div>
-          <div className="inputContainer">
+          <div className="inputContainer" style={{ marginBottom: "30px" }}>
             <h4>Favorite Club</h4>
             <input
               name="Favorite Club"

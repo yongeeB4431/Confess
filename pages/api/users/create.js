@@ -6,6 +6,6 @@ export default async function create(req, res) {
     await Info.create(req.body);
     res.json({ message: "success" });
   } catch (err) {
-    console.error(err.message);
+    res.json({ err: err.message });
   }
 }

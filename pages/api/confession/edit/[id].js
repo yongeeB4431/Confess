@@ -19,6 +19,6 @@ export default async function addConfession(req, res) {
     // const response = await data.json();
     res.json({ data });
   } catch (err) {
-    res.status(405).end(JSON.stringify(err.message));
+    res.json({ err: err.message });
   }
 }

@@ -6,6 +6,6 @@ export default async function edit(req, res) {
     let data = await Info.findOneAndUpdate({ _id: id }, req.body);
     res.json({ message: data });
   } catch (err) {
-    console.error(err.message);
+    res.json({ err: err.message });
   }
 }

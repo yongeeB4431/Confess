@@ -17,20 +17,32 @@ function Login({ _data }) {
   };
 
   const handleSubmit = () => {
-    _data.message.map((data) => {
-      if (data.user == username && data.password == password) {
-        setMessage("");
-        Cookie.set("name", data.name);
-        setAuthenticate(true);
-        return;
-      }
-    });
-    if (authenticate) {
+    let res = 0;
+    let User = _data.message.filter(
+      (data) => data.user == username && data.password == password
+    );
+    if (User.length == 1) {
+      Cookie.set("name", User[0].name);
       setMessage("Authenticating User");
       Router.push("/");
     } else {
-      setMessage("username or password is incorrect");
+      setMessage("Username or password is incorrect");
     }
+    //   Cookie.set("name", data.name);
+    // _data.message.map((data) => {
+    //   console.log(authenticate);
+
+    //   if (data.user == username && data.password == password) {
+    //     setAuthenticate(true);
+
+    //     setMessage("Authenticating User");
+    //     Router.push("/");
+    //   }
+    // });
+    // if (!authenticate) {
+    //   console.log(authenticate);
+    //   setMessage("username or password is incorrect");
+    // }
   };
 
   return (
@@ -65,7 +77,7 @@ export async function getServerSideProps(context) {
     const { req } = context;
     const host = req.headers.host;
     const path = `${server}${host}/api/users/find`;
-    const data = await fetch(`${server}${host}/api/users/find`);
+    const data = await fetch(path);
     const _data = await data.json();
     return {
       props: {

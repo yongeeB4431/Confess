@@ -11,7 +11,6 @@ export default async function newData(req, res) {
     const data = await Confession.findOneAndUpdate({ _id: id }, req.body);
     res.json(data);
   } catch (err) {
-    res.status(405).end(JSON.stringify(err.message));
-    res.status(JSON.stringify(data));
+    res.json({ err: err.message });
   }
 }

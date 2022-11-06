@@ -15,6 +15,7 @@ function Message({ confession }) {
     starred,
     _id,
     musicLink,
+    user,
   } = confession;
   return (
     <main>
@@ -29,7 +30,7 @@ function Message({ confession }) {
         id={_id}
         musicLink={musicLink}
       />
-      <Title title={title} editHistory={editHistory} id={_id} />
+      <Title title={title} editHistory={editHistory} id={_id} user={user} />
       <Confession confession={yourConfession} />
       <BottomNav />
     </main>
