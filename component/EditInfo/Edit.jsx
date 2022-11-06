@@ -85,7 +85,7 @@ function Edit({ data }) {
     <>
       <main>
         <div className="saveContainer">
-          <Link href={"/editInfo/${d._id}"}>
+          <Link href={`/profile/${d._id}`}>
             <FontAwesomeIcon icon={faArrowLeft} />
           </Link>
           <h4 onClick={handleSave}>save</h4>

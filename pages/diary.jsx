@@ -12,7 +12,7 @@ function diary({ confessions }) {
   }).current;
   useEffect(() => {
     setConfess(confessions.confession);
-  }, []);
+  }, [confessions.confession.length]);
   return (
     <>
       <Diary

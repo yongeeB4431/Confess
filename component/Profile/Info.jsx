@@ -43,7 +43,7 @@ function Info({ data }) {
             <h4>{data.rStatus || "unknown"}</h4>
           </div>
           <div className="infoContainer">
-            <h4>contactNumber: </h4>
+            <h4>contact number: </h4>
             <h4>{data.contactNumber || "unknown"}</h4>
           </div>
           <div className="infoContainer">
