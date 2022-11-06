@@ -28,21 +28,6 @@ function Login({ _data }) {
     } else {
       setMessage("Username or password is incorrect");
     }
-    //   Cookie.set("name", data.name);
-    // _data.message.map((data) => {
-    //   console.log(authenticate);
-
-    //   if (data.user == username && data.password == password) {
-    //     setAuthenticate(true);
-
-    //     setMessage("Authenticating User");
-    //     Router.push("/");
-    //   }
-    // });
-    // if (!authenticate) {
-    //   console.log(authenticate);
-    //   setMessage("username or password is incorrect");
-    // }
   };
 
   return (

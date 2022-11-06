@@ -7,6 +7,6 @@ export default async function updateMany(req, res) {
     );
     res.json({ _data });
   } catch (err) {
-    console.log(err.message);
+    res.json({ err: err.message });
   }
 }

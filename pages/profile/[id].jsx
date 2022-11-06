@@ -1,7 +1,6 @@
 import { server } from "../../config";
 import ProfileData from "../../component/Profile/ProfileData";
 function Profile({ data }) {
-  console.log(data);
   return <ProfileData data={data.data[0]} />;
 }
 

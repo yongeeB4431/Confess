@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { server } from "../../config";
 function Picture({ data }) {
   const router = useRouter();
-  console.log(data);
   return (
     <>
       <main>

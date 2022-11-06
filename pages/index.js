@@ -11,7 +11,6 @@ import Audio from "../component/Home/Audio";
 function Homes({ response }) {
   let name = Cookie.get("name");
   let data = response.message.filter((data) => data.name == name);
-  console.log(response);
   const src =
     "https://dl.dropbox.com/s/q4tw1qorwwoi5kc/Crying%20Alone%20-%20Sad%20%26%20Emotional%20Piano%20Song%20Instrumental.mp3?dl=0";
   return (
