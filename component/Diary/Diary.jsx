@@ -1,3 +1,7 @@
+import Cookie from "js-cookie";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import NProgress from "nprogress";
 import Delete from "../Delete/Delete";
 import { useState, useEffect } from "react";
 import BottomNav from "../Home/BottomNavigator";
@@ -12,10 +16,23 @@ function Diary({ data }) {
   const [delIcon, setDelIcon] = useState(false);
   const [toggle, setToggle] = useState(false);
   const [confession, setConfession] = useState({});
-
-  const handleDelete = async ({ _id, title }) => {
-    setDelIcon(true);
-    setConfession({ _id, title });
+  const handleDelete = async ({ _id, title, user }) => {
+    let CName = Cookie.get("name");
+    if (user == CName) {
+      setDelIcon(true);
+      setConfession({ _id, title, user });
+    } else {
+      toast.warn(`Can't delete confession written by ${user}`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
   };
   const handleToggle = () => {
     if (!toggle) {
@@ -32,9 +49,11 @@ function Diary({ data }) {
   };
 
   const handleCheck = async () => {
+    NProgress.start();
     await fetch(`/api/confession/delete/${confession._id}`);
     setDelIcon(false);
     setOrder(order.filter((o) => o._id !== confession._id));
+    NProgress.done();
   };
   useEffect(() => {
     setOrder([...data]);
@@ -45,6 +64,7 @@ function Diary({ data }) {
       <Head>
         <title>confessions</title>
       </Head>
+      <ToastContainer />
       <FixedTop handleToggle={handleToggle} toggle={toggle} />
       {data.length > 0 ? (
         <Confessions
@@ -56,7 +76,13 @@ function Diary({ data }) {
         <DataNotFound />
       )}
       {delIcon && (
-        <Delete del={{ handleCheck, handleX, title: confession.title }} />
+        <Delete
+          del={{
+            handleCheck,
+            handleX,
+            title: confession.title,
+          }}
+        />
       )}
       <BottomNav />
     </>

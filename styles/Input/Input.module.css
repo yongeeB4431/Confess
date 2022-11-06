@@ -12,7 +12,7 @@
   background: transparent;
   color: crimson;
   padding: 6px;
-  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 0px 15px rgba(220, 20, 60, 0.5);
   font-size: 18px;
   font-family: "Open Sans";
   outline: none;
@@ -24,15 +24,11 @@
 }
 .container input::placeholder {
   color: crimson;
-  opacity: 20%;
+  opacity: 60%;
   font-weight: bold;
   text-align: center;
   letter-spacing: 3px;
   text-transform: capitalize;
-}
-.container input:hover {
-  box-shadow: 0px 0px 10px rgba(220, 20, 60, 0.1);
-  transform: scale(1.075);
 }
 
 .container h5 {
@@ -48,7 +44,6 @@
   height: 52vh;
   opacity: 60%;
   color: whitesmoke;
-  overflow: hidden;
   font-size: 17px;
   padding: 10px;
   box-sizing: border-box;
@@ -61,8 +56,36 @@
   outline: none;
   margin-top: 15px;
   text-align: left;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 0px 10px rgba(220, 20, 60, 0.4);
   overflow-y: scroll;
+}
+
+.container textarea::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 10px;
+}
+
+.container textarea::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.container textarea::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    transparent,
+    crimson,
+    transparent,
+    transparent,
+    transparent
+  );
+  border-radius: 6px;
+}
+
+.container textarea::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.container textarea::-webkit-scrollbar-track-piece {
+  background-color: transparent;
 }
 
 .container textarea::placeholder {

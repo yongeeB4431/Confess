@@ -16,6 +16,7 @@ export class Request {
           starred: false,
           title,
           yourConfession,
+          musicLink: "",
         }),
         headers: {
           "Content-Type": "application/json",

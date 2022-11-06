@@ -43,6 +43,10 @@ function Info({ data }) {
             <h4>{data.rStatus || "unknown"}</h4>
           </div>
           <div className="infoContainer">
+            <h4>contactNumber: </h4>
+            <h4>{data.contactNumber || "unknown"}</h4>
+          </div>
+          <div className="infoContainer">
             <h4>Crush: </h4>
             <h4>{data.crush || "unknown"}</h4>
           </div>
@@ -72,7 +76,7 @@ function Info({ data }) {
       <style jsx>
         {`
           .container {
-            margin: 0px 0px;
+            margin: 20px 0px;
           }
           .infoContainer {
             display: flex;
@@ -92,6 +96,7 @@ function Info({ data }) {
           .logout {
             display: flex;
             justify-content: center;
+            margin-bottom: 50px;
           }
           .logout h4 {
             color: gray;

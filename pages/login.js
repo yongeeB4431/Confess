@@ -7,6 +7,7 @@ function Login({ _data }) {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [authenticate, setAuthenticate] = useState(false);
 
   const handleUserName = (e) => {
     setUserName(e.target.value);
@@ -18,14 +19,18 @@ function Login({ _data }) {
   const handleSubmit = () => {
     _data.message.map((data) => {
       if (data.user == username && data.password == password) {
+        setMessage("");
         Cookie.set("name", data.name);
-        setMessage("Authenticating User");
-        setPassword("");
-        Router.push("/");
-      } else {
-        setMessage("username or password is incorrect");
+        setAuthenticate(true);
+        return;
       }
     });
+    if (authenticate) {
+      setMessage("Authenticating User");
+      Router.push("/");
+    } else {
+      setMessage("username or password is incorrect");
+    }
   };
 
   return (

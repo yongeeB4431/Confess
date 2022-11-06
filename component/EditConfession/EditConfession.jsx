@@ -1,3 +1,6 @@
+import Cookie from "js-cookie";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import write from "../../styles/Home/WriteIcon.module.css";
 import { useRouter } from "next/router";
 import Head from "next/head";
@@ -21,47 +24,77 @@ function Write({ data }) {
     "https://dl.dropbox.com/s/8377unyfvmh3zs1/Beautiful%20Sad%20Piano%20Instrumental%20Song%20-%20Everywhere.mp3?dl=0";
 
   const handleEdit = async () => {
-    const d = new DateAndTime();
-    const { Date: date, day, time } = d.handleData();
-    let previousData = {
-      yourConfession: data.yourConfession,
-      date: data.date,
-      day: data.day,
-      time: data.time,
-    };
-    let newData = {
-      yourConfession,
-      date,
-      day,
-      time,
-    };
-    const DATA = await fetch(`/api/confession/edit/${query.id}`, {
-      method: "POST",
-      body: JSON.stringify(previousData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    await DATA.json();
-    let newestData = await fetch(`/api/confession/newData/${query.id}`, {
-      method: "POST",
-      body: JSON.stringify(newData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    await newestData.json();
-    push("/diary");
+    let CName = Cookie.get("name");
+    if (data.user == CName) {
+      const d = new DateAndTime();
+      const { Date: date, day, time } = d.handleData();
+      let previousData = {
+        yourConfession: data.yourConfession,
+        date,
+        day,
+        time,
+      };
+      let newData = {
+        yourConfession,
+        date: data.date,
+        day: data.day,
+        time: data.time,
+      };
+      const DATA = await fetch(`/api/confession/edit/${query.id}`, {
+        method: "POST",
+        body: JSON.stringify(previousData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      await DATA.json();
+      let newestData = await fetch(`/api/confession/newData/${query.id}`, {
+        method: "POST",
+        body: JSON.stringify(newData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      await newestData.json();
+      push("/diary");
+    } else {
+      toast.info(`Can't edit confession written by ${data.user}`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
   };
   return (
     <main className={style.container}>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       <Head>
         <title>write</title>
       </Head>
       <Title leftSide={<Audio styling={styles.Audio} source={src} />}>
         <div
           className={write.iconContainer}
-          onClick={Object.keys(data).length > 0 && handleEdit}
+          onClick={
+            Object.keys(data).length > 0
+              ? handleEdit
+              : () => console.log("can't be edited due to some circumstances")
+          }
         >
           <div className={write.centerPencil}>
             <FontAwesomeIcon

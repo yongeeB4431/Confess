@@ -14,6 +14,7 @@ const infoSchema = new Schema({
   DOB: String,
   age: String,
   rStatus: String,
+  contactNumber: String,
   crush: String,
   favoritePerson: String,
   favoriteFood: String,

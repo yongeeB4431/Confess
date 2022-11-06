@@ -12,6 +12,7 @@ function Edit({ data }) {
   const [DOB, setDOB] = useState(d.DOB || "");
   const [age, setAge] = useState(d.age || "");
   const [rStatus, setRstatus] = useState(d.rStatus || "");
+  const [contactNumber, setContactNumber] = useState(d.contactNumber || "");
   const [crush, setCrush] = useState(d.crush || "");
   const [favoritePerson, setFavoritePerson] = useState(d.favoritePerson || "");
   const [favoriteFood, setFavoriteFood] = useState(d.favoriteFood || "");
@@ -26,6 +27,8 @@ function Edit({ data }) {
   const handleAge = (e) => setAge(e.target.value);
 
   const handleRstatus = (e) => setRstatus(e.target.value);
+
+  const handleContactNumber = (e) => setContactNumber(e.target.value);
 
   const handleCrush = (e) => setCrush(e.target.value);
 
@@ -42,6 +45,7 @@ function Edit({ data }) {
       DOB,
       age,
       rStatus,
+      contactNumber,
       crush,
       favoritePerson,
       favoriteFood,
@@ -103,6 +107,14 @@ function Edit({ data }) {
           <div className="inputContainer">
             <h4>Rstatus</h4>
             <input name="rStatus" value={rStatus} onChange={handleRstatus} />
+          </div>
+          <div className="inputContainer">
+            <h4>contact number</h4>
+            <input
+              name="contactNumber"
+              value={contactNumber}
+              onChange={handleContactNumber}
+            />
           </div>
           <div className="inputContainer">
             <h4>Crush</h4>

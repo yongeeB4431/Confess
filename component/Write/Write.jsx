@@ -50,7 +50,7 @@ function Write() {
             <FontAwesomeIcon
               className={write.icon}
               icon={faPaperPlane}
-              onClick={TCL && sendData}
+              onClick={TCL ? sendData : () => Router.push("/write")}
             />
           </div>
         </div>
