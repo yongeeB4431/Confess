@@ -5,7 +5,7 @@
   position: absolute;
   top: 25%;
   background-image: url("/images/confession.jpg");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   overflow: hidden;
   box-sizing: border-box;
