@@ -5,7 +5,7 @@
   position: absolute;
   top: 25%;
   background-image: url("/images/confession.jpg");
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   overflow: hidden;
   box-sizing: border-box;
@@ -13,7 +13,7 @@
 }
 
 .scrollBar {
-  height: 67vh;
+  height: 65vh;
   overflow-y: scroll;
 }
 
