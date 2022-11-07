@@ -10,7 +10,7 @@ import FixedTop from "./FixedTop";
 import Head from "next/head";
 import DataNotFound from "../DataNotFound/DataNotFound";
 
-function Diary({ data }) {
+function Diary({ data, _user }) {
   const [order, setOrder] = useState([]);
   // const [del, setDel] = useState(false)
   const [delIcon, setDelIcon] = useState(false);
@@ -60,7 +60,7 @@ function Diary({ data }) {
         <title>confessions</title>
       </Head>
       <ToastContainer />
-      <FixedTop handleToggle={handleToggle} toggle={toggle} />
+      <FixedTop handleToggle={handleToggle} toggle={toggle} _user={_user} />
       {data.length > 0 ? (
         <Confessions
           confessions={order}

@@ -5,17 +5,25 @@ function EditMessages({ editHistory }) {
     <>
       <div className={style.scrollBar}>
         <div className={styles.container}>
-          {editHistory.map((edit) => {
+          {editHistory.map((edit, index) => {
             return (
               <div key={edit._id}>
-                <div className={styles.dateTime}>
-                  <h3 className={styles.date}>
-                    {edit.day}, {edit.date}
-                  </h3>
-                  <h5 className={styles.time}>{edit.time}</h5>
-                </div>
+                <h3
+                  style={{
+                    textAlign: "center",
+                    color: "whiteSmoke",
+                    opacity: "70%",
+                  }}
+                >
+                  History {index + 1}
+                </h3>
                 <div className={styles.message}>
-                  <p className={styles.confession}>{edit.yourConfession}</p>
+                  <p
+                    className={styles.confession}
+                    style={{ fontFamily: "Fira Code" }}
+                  >
+                    {edit.yourConfession}
+                  </p>
                 </div>
               </div>
             );

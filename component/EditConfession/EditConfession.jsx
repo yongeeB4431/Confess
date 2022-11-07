@@ -1,3 +1,5 @@
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import write from "../../styles/Home/WriteIcon.module.css";
 import { useRouter } from "next/router";
 import Head from "next/head";
@@ -11,6 +13,7 @@ import style from "../../styles/Input/Write.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { DateAndTime } from "../../functions/DateAndTime";
+
 function Write({ data }) {
   const { query, push } = useRouter();
   const [yourConfession, setYourConfession] = useState(data.yourConfession);
@@ -21,19 +24,30 @@ function Write({ data }) {
     "https://dl.dropbox.com/s/8377unyfvmh3zs1/Beautiful%20Sad%20Piano%20Instrumental%20Song%20-%20Everywhere.mp3?dl=0";
 
   const handleEdit = async () => {
-    const d = new DateAndTime();
-    const { Date: date, day, time } = d.handleData();
+    if (data.yourConfession == yourConfession) {
+      toast.info(
+        `Can't be edited cause your previous confession is the same as the new one`,
+        {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        }
+      );
+      return;
+    }
     let previousData = {
       yourConfession: data.yourConfession,
-      date,
-      day,
-      time,
     };
     let newData = {
       yourConfession,
-      date: data.date,
       day: data.day,
       time: data.time,
+      date: data.date,
     };
     const DATA = await fetch(`/api/confession/edit/${query.id}`, {
       method: "POST",
@@ -58,6 +72,7 @@ function Write({ data }) {
       <Head>
         <title>write</title>
       </Head>
+      <ToastContainer />
       <Title leftSide={<Audio styling={styles.Audio} source={src} />}>
         <div
           className={write.iconContainer}

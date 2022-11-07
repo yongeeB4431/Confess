@@ -1,10 +1,9 @@
 .NavContainer {
   position: fixed;
-  bottom: 10px;
+  bottom: 0px;
   z-index: 5;
   width: 100%;
   background: black;
-  opacity: 99%;
 }
 
 .Nav {
@@ -20,8 +19,8 @@
 }
 
 .Nav a h4 {
-  color: gray;
-  opacity: 50%;
+  color: whitesmoke;
+  font-family: "Open Sans";
   padding-top: 5px;
 }
 
@@ -36,10 +35,10 @@
 
 .active {
   color: white;
-  opacity: 10%;
+  opacity: 50%;
 }
 
 .Nav a .Active {
   color: burlywood;
-  opacity: 10%;
+  opacity: 50%;
 }
