@@ -1,3 +1,5 @@
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Router from "next/router";
 import styles from "../styles/Login/Login.module.css";
 import { useState } from "react";
@@ -8,6 +10,7 @@ function Login({ _data }) {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [authenticate, setAuthenticate] = useState(false);
+  const [visibility, setVisibility] = useState(false);
 
   const handleUserName = (e) => {
     setUserName(e.target.value);
@@ -17,7 +20,6 @@ function Login({ _data }) {
   };
 
   const handleSubmit = () => {
-    let res = 0;
     let User = _data.message.filter(
       (data) => data.user == username && data.password == password
     );
@@ -42,12 +44,28 @@ function Login({ _data }) {
             value={username}
             onChange={handleUserName}
           />
-          <input
-            type="password"
-            placeholder="password"
-            value={password}
-            onChange={handlePassword}
-          />
+          <div
+            style={{
+              position: "relative",
+              display: "flex",
+              justifyContent: "center",
+              width: "100vw",
+            }}
+          >
+            <input
+              type={visibility ? "text" : "password"}
+              placeholder="password"
+              value={password}
+              onChange={handlePassword}
+              style={{ width: "50%" }}
+              maxLength="16"
+            />
+            <FontAwesomeIcon
+              icon={visibility ? faEyeSlash : faEye}
+              onClick={() => setVisibility(!visibility)}
+              className={styles.icon}
+            />
+          </div>
           <button className={styles.button} onClick={handleSubmit}>
             submit
           </button>

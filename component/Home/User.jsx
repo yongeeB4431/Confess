@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-function Write({ data }) {
+function User({ data }) {
   return (
     <main>
       <Link href={`/profile/${data[0]._id}`}>
@@ -46,4 +46,4 @@ function Write({ data }) {
   );
 }
 
-export default Write;
+export default User;

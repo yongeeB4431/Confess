@@ -75,3 +75,12 @@
   font-family: "Fira Code";
   opacity: 70%;
 }
+
+.icon {
+  color: crimson;
+  position: absolute;
+  top: 50%;
+  font-size: 16px;
+  transform: translateY(-50%);
+  right: 26%;
+}

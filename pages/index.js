@@ -2,7 +2,7 @@ import { server } from "../config/index";
 import Head from "next/head";
 import Title from "../component/Home/title";
 import Picture from "../component/Home/Image";
-import Write from "../component/Home/WriteIcon";
+import User from "../component/Home/User";
 import BottomNavigator from "../component/Home/BottomNavigator";
 import styles from "../styles/Home/Title.module.css";
 import Cookie from "js-cookie";
@@ -18,7 +18,7 @@ function Homes({ response }) {
       <Head>
         <title>Home</title>
       </Head>
-      <Title leftSide={<Write data={data} />}>
+      <Title leftSide={<User data={data} />}>
         <Audio styling={styles.Audio} source={src} />
       </Title>
       <Picture />
