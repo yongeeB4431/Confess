@@ -183,7 +183,7 @@ function Edit({ data }) {
           background: black;
           outline: none;
           border: none;
-          width: 50%;
+          width: 70%;
           font-size: 18px;
           font-weight: bold;
           color: antiquewhite;

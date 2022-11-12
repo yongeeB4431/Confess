@@ -43,6 +43,8 @@ function Login({ _data }) {
             placeholder="username"
             value={username}
             onChange={handleUserName}
+            autoComplete="off"
+            autoCorrect="off"
           />
           <div
             style={{
@@ -59,6 +61,8 @@ function Login({ _data }) {
               onChange={handlePassword}
               style={{ width: "50%" }}
               maxLength="16"
+              autoComplete="off"
+              autoCorrect="off"
             />
             <FontAwesomeIcon
               icon={visibility ? faEyeSlash : faEye}
