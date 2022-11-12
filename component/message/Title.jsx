@@ -4,7 +4,7 @@ import Router from "next/router";
 import Link from "next/link";
 import Cookie from "js-cookie";
 import style from "../../styles/Message/Title.module.css";
-import { faHistory } from "@fortawesome/free-solid-svg-icons";
+import { faHistory, faPencil } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Title({ title, editHistory, id, user }) {
   const handleEdit = () => {
@@ -28,6 +28,26 @@ function Title({ title, editHistory, id, user }) {
       });
     }
   };
+
+  function handleHistory() {
+    if (editHistory.length == 0) {
+      toast.info(
+        `Can't view the history of '${title}' because it has never been edited`,
+        {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        }
+      );
+      return;
+    }
+    Router.push(`edit/${id}`);
+  }
   return (
     <div className={style.container}>
       <ToastContainer
@@ -42,28 +62,33 @@ function Title({ title, editHistory, id, user }) {
         pauseOnHover
         theme="dark"
       />
-      <Link href={`/edit/${id}`}>
-        <a style={{ textDecoration: "none" }}>
-          <FontAwesomeIcon
-            icon={faHistory}
-            color={editHistory.length < 4 ? "green" : "red"}
-            className={style.history}
-          />
-          <sub
-            style={{
-              fontStyle: "italic",
-              fontSize: "12px",
-              fontWeight: "bold",
-              color: "gray",
-              fontFamily: "Open Sans",
-            }}
-          >
-            {editHistory.length}
-          </sub>
-        </a>
-      </Link>
+      <div onClick={handleHistory}>
+        <FontAwesomeIcon
+          icon={faHistory}
+          color={!editHistory.length == 0 ? "green" : "red"}
+          className={style.history}
+        />
+        <sub
+          style={{
+            fontStyle: "italic",
+            fontSize: "12px",
+            fontWeight: "bold",
+            color: "gray",
+            fontFamily: "Open Sans",
+          }}
+        >
+          {editHistory.length}
+        </sub>
+      </div>
       <h1 className={style.title}>{title}</h1>
-      <div onClick={handleEdit}>
+      <FontAwesomeIcon
+        icon={faPencil}
+        color={!editHistory.length == 0 ? "green" : "red"}
+        className={style.history}
+        style={{ fontSize: "26px" }}
+        onClick={handleEdit}
+      />
+      {/* <div onClick={handleEdit}>
         <span
           className={style.edit}
           style={{
@@ -73,7 +98,7 @@ function Title({ title, editHistory, id, user }) {
         >
           edit
         </span>
-      </div>
+      </div> */}
     </div>
   );
 }
