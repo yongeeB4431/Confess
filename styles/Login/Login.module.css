@@ -35,13 +35,6 @@
   color: crimson;
   font-size: 20px;
   font-family: "Fira Code";
-  transition: all 1s linear 0.5s;
-}
-
-.formFields input:hover {
-  box-shadow: 1px 1px 5px purple;
-  color: white;
-  opacity: 50%;
 }
 
 .formFields input::placeholder {
@@ -73,7 +66,7 @@
   text-align: center;
   margin: 10px 0;
   font-family: "Fira Code";
-  opacity: 70%;
+  opacity: 85%;
 }
 
 .icon {
