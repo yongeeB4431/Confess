@@ -88,17 +88,6 @@ function Title({ title, editHistory, id, user }) {
         style={{ fontSize: "26px" }}
         onClick={handleEdit}
       />
-      {/* <div onClick={handleEdit}>
-        <span
-          className={style.edit}
-          style={{
-            background: editHistory.length ? "green" : "red",
-            cursor: "pointer",
-          }}
-        >
-          edit
-        </span>
-      </div> */}
     </div>
   );
 }
