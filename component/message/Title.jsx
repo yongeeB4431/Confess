@@ -46,7 +46,7 @@ function Title({ title, editHistory, id, user }) {
       );
       return;
     }
-    Router.push(`edit/${id}`);
+    Router.push(`/edit/${id}`);
   }
   return (
     <div className={style.container}>
