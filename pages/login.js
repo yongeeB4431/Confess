@@ -59,7 +59,7 @@ function Login({ _data }) {
               placeholder="password"
               value={password}
               onChange={handlePassword}
-              style={{ width: "50%" }}
+              style={{ width: "50%", background: "#000000" }}
               maxLength="16"
               autoComplete="off"
               autoCorrect="off"

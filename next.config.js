@@ -7,6 +7,16 @@ const nextConfig = {
         destination: "/login",
         permanent: false,
       },
+      {
+        source: "/write",
+        destination: "/login",
+        permanent: false,
+      },
+      {
+        source: "/diary",
+        destination: "/login",
+        permanent: false,
+      },
     ];
   },
   reactStrictMode: true,

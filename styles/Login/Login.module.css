@@ -26,7 +26,6 @@
   width: 50%;
   height: 25px;
   margin: 10px 0;
-  background: black;
   border: none;
   outline: none;
   box-shadow: 1px 1px 5px rgba(220, 20, 60, 0.6);
@@ -35,10 +34,12 @@
   color: crimson;
   font-size: 20px;
   font-family: "Fira Code";
+  background: black;
 }
 
 .formFields input::placeholder {
-  color: gray;
+  color: antiquewhite;
+  opacity: 30%;
   font-family: "Fira Code";
   font-style: italic;
   font-size: 18px;
